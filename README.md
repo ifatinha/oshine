@@ -1,2 +1,2 @@
 # Oshine Restaurant
-# Template with html, CSS and SCSS
+## Template with html, CSS and SCSS
