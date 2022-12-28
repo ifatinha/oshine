@@ -1,12 +1,9 @@
 .header {
-    align-items    : center;
-    background-size: cover;
-    display        : flex;
-    flex-direction : column;
-    justify-content: center;
-    height         : 100%;
-    position       : relative;
-    width          : 100%;
+    @include flex-properties(flex, center, center);
+    flex-direction: column;
+    height        : 100%;
+    position      : relative;
+    width         : 100%;
 }
 
 .header-container {
@@ -28,24 +25,18 @@
     }
 
     h1 {
-        font-family   : $kaushanScript;
-        font-size     : $title-font;
+        @include title-default($kaushanScript, $title-font, 100px);
         letter-spacing: 3px;
-        line-height   : 100px;
-    }
 
-    h2 {
-        font-family: $crimsonText;
-        font-size  : $subtitle-font;
-        font-style : italic;
-        line-height: 40px;
-    }
-
-    @media screen and (max-width: $mobile) {
-        h1 {
+        @include mobile {
             font-size  : 2rem;
             line-height: 40px;
         }
+    }
+
+    h2 {
+        @include title-default($crimsonText, $subtitle-font, 40px);
+        font-style: italic;
     }
 }
 
@@ -57,14 +48,12 @@
 }
 
 .header-menu_container {
-    align-items    : center;
-    display        : $flex;
-    justify-content: space-between;
-    padding        : 25px 2%;
-    width          : 100%;
+    @include flex-properties(flex, center, space-between);
+    padding: 25px 2%;
+    width  : 100%;
 
     ul {
-        display: $flex;
+        display: flex;
         gap    : 10px;
     }
 
@@ -85,6 +74,10 @@
             &.ativo {
                 color: $theme-link_hover;
             }
+        }
+
+        @include tablet {
+            display: none;
         }
     }
 
@@ -107,27 +100,20 @@
                 }
             }
         }
-    }
 
-    @media screen and (max-width: $tablet) {
-
-        .header-menu_desktop {
-            display: none;
-        }
-
-        .media-sociais {
-            display: none;
+        @include tablet {
+            display: none
         }
     }
 }
 
 .nav-mobile {
-    background     : url("./../images/menu-aberto.png") no-repeat center;
-    background-size: cover;
-    display        : none;
-    height         : 38px;
-    transition     : 0.5s;
-    width          : 38px;
+    @include background;
+    background-image: url("./../images/menu-aberto.png");
+    display         : none;
+    height          : 38px;
+    transition      : 0.5s;
+    width           : 38px;
 
     .header-menu_mobile {
         background-color: $second-color;
@@ -157,7 +143,7 @@
         display: block;
     }
 
-    @media screen and (max-width: $tablet) {
+    @include tablet {
         display: block;
     }
 }

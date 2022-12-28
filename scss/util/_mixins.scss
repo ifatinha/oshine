@@ -1,0 +1,29 @@
+@mixin flex-properties($displat-flex, $align-items, $justify-content) {
+    align-items    : $align-items;
+    display        : $displat-flex;
+    justify-content: $justify-content;
+}
+
+@mixin background {
+    background-repeat  : no-repeat;
+    background-position: center;
+    background-size    : cover;
+}
+
+@mixin title-default($font-family, $font-size, $line-height) {
+    font-family: $font-family;
+    font-size  : $font-size;
+    line-height: $line-height;
+}
+
+@mixin tablet {
+    @media screen and (max-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media screen and (max-width: $mobile) {
+        @content;
+    }
+}
