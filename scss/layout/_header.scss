@@ -1,0 +1,163 @@
+.header {
+    align-items    : center;
+    background-size: cover;
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    height         : 100%;
+    position       : relative;
+    width          : 100%;
+}
+
+.header-container {
+    padding   : 0 2%;
+    text-align: center;
+    width     : 100%;
+
+    p,
+    h1,
+    h2 {
+        color: $primary-color;
+    }
+
+    p {
+        letter-spacing: 2px;
+        line-height   : 32px;
+        opacity       : 0.8;
+        text-transform: uppercase;
+    }
+
+    h1 {
+        font-family   : $kaushanScript;
+        font-size     : $title-font;
+        letter-spacing: 3px;
+        line-height   : 100px;
+    }
+
+    h2 {
+        font-family: $crimsonText;
+        font-size  : $subtitle-font;
+        font-style : italic;
+        line-height: 40px;
+    }
+
+    @media screen and (max-width: $mobile) {
+        h1 {
+            font-size  : 2rem;
+            line-height: 40px;
+        }
+    }
+}
+
+.header-menu {
+    background-color: $primary-color;
+    bottom          : 0;
+    position        : absolute;
+    width           : 100%;
+}
+
+.header-menu_container {
+    align-items    : center;
+    display        : $flex;
+    justify-content: space-between;
+    padding        : 25px 2%;
+    width          : 100%;
+
+    ul {
+        display: $flex;
+        gap    : 10px;
+    }
+
+    .header-menu_desktop {
+        a {
+            color         : $theme-link_color;
+            display       : inline-block;
+            font-size     : $primary-font;
+            letter-spacing: 1px;
+            padding       : 0 20px;
+            text-transform: uppercase;
+            transition    : .3s all ease-in-out;
+
+            &:hover {
+                color: $theme-link_hover;
+            }
+
+            &.ativo {
+                color: $theme-link_hover;
+            }
+        }
+    }
+
+    .media-sociais {
+        li {
+            a {
+                background-color: $theme-icon_color-bg;
+                border-radius   : 50%;
+                color           : $primary-color;
+                display         : inline-block;
+                font-size       : $primary-font;
+                height          : 28px;
+                line-height     : 28px;
+                transition      : .3s all ease-in-out;
+                text-align      : center;
+                width           : 28px;
+
+                &:hover {
+                    background-color: $theme-icon_color-houver;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: $tablet) {
+
+        .header-menu_desktop {
+            display: none;
+        }
+
+        .media-sociais {
+            display: none;
+        }
+    }
+}
+
+.nav-mobile {
+    background     : url("./../../images/menu-aberto.png") no-repeat center;
+    background-size: cover;
+    display        : none;
+    height         : 38px;
+    transition     : 0.5s;
+    width          : 38px;
+
+    .header-menu_mobile {
+        background-color: $second-color;
+        bottom          : 80px;
+        display         : none;
+        left            : 0px;
+        position        : fixed;
+        width           : 100%;
+
+        li {
+            border-bottom: 1px solid $theme-border_color;
+            padding-left : 20px;
+
+            a {
+                color         : $primary-color;
+                display       : inline-block;
+                font-size     : $primary-font;
+                line-height   : 40px;
+                letter-spacing: 1px;
+                opacity       : .5;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    &:hover .header-menu_mobile {
+        display: block;
+    }
+
+    @media screen and (max-width: $tablet) {
+        display: block;
+    }
+}

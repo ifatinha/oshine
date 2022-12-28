@@ -7,6 +7,12 @@ body {
     font-family: $montserrat;
 }
 
+html,
+body {
+    height: 100%;
+    width : 100%;
+}
+
 a {
     color          : initial;
     text-decoration: none;
