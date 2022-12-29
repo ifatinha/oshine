@@ -26,12 +26,17 @@ $kaushanScript:'Kaushan Script',
 cursive;
 
 /* typographies */
-$primary-font : 0.75rem;
-$title-font   : 5rem;
-$subtitle-font: 1.375rem;
+$primary-font      : 0.75rem;
+$second-font       : 0.975rem;
+$title-font        : 5rem;
+$subtitle-font     : 1.5rem;
+$section-title_font: 2.625rem;
+$paragraph-font    : 1.25rem;
+
 
 /* general */
+$linear-gradient : linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 
 /* media queries break point */
-$tablet: 900px;
+$tablet: 1000px;
 $mobile: 600px;

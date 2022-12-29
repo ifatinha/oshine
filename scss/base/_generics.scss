@@ -4,20 +4,7 @@
     width    : 100%;
 }
 
-.primary-btn {
-    background-color: $theme-button_color-bg;
-    color           : $theme-button_color;
-    display         : inline-block;
-    font-size       : $primary-font;
-    letter-spacing  : 1px;
-    line-height     : 30px;
-    padding         : 12px 35px;
-    text-align      : center;
-    text-transform  : uppercase;
-    transition      : 0.3s all linear;
-
-    &:hover {
-        background-color: $primary-color;
-        color           : $second-color;
-    }
+.ul-menu {
+    display: flex;
+    gap    : 10px;
 }

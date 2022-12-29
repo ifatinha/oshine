@@ -1,0 +1,168 @@
+.about-bg {
+    background           : $linear-gradient, url("./../images/about-bg.jpg");
+    background-attachment: fixed;
+    @include background-properties;
+    transition: right .4s ease;
+    width     : 100%;
+}
+
+.about-section {
+    border-top: 1px solid $theme-border_color;
+    padding   : 120px 2%;
+    width     : 100%;
+
+    @include tablet {
+        padding-bottom: 60px;
+        padding-top   : 60px;
+    }
+}
+
+.about-content {
+    display              : grid;
+    grid-template-columns: 1fr 1fr;
+    gap                  : 30px;
+    place-items          : center;
+
+    @include tablet {
+        grid-template-columns: 1fr;
+    }
+
+    .about-text {
+        align-self: start;
+
+        h1 {
+            @include font-styles($lora, $section-title_font, 60px);
+            color        : $theme-title_color;
+            font-style   : italic;
+            margin-bottom: 20px;
+        }
+
+        p {
+            @include font-styles($lora, $second-font, 30px);
+            color: $theme-text_color;
+
+            &:first-of-type {
+                margin-bottom: 30px;
+            }
+        }
+
+        a {
+            @extend %primary-btn;
+        }
+    }
+}
+
+.about-gallery {
+    width: 100%;
+}
+
+.gallery-container {
+    display              : grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap                  : 20px;
+    padding              : 0 15px;
+
+    @include tablet {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include mobile {
+        grid-template-columns: 1fr;
+    }
+
+    .about-gallery_item {
+        cursor  : pointer;
+        position: relative;
+
+        .about-gallery_overlay {
+            @extend %overlay;
+        }
+    }
+}
+
+.about-slide {
+    height  : 600px;
+    overflow: hidden;
+
+    .slide-bg-1 {
+        background: url("./../images/about-bg-01.jpg");
+    }
+
+    .slide-bg-2 {
+        background: $linear-gradient, url("./../images/about-bg-02.jpg");
+    }
+
+    .slide-bg-3 {
+        background: $linear-gradient, url("./../images/about-bg-03.jpg");
+    }
+
+    .slide-item {
+        @include background-properties;
+        background-attachment: fixed;
+        height               : 100%;
+        position             : relative;
+
+        h2 {
+            @include font-styles($lora, 3rem, 60px);
+            color     : $primary-color;
+            font-style: italic;
+            left      : 50%;
+            position  : absolute;
+            text-align: center;
+            top       : 50%;
+            transform : translate(-50%, -50%);
+        }
+
+        .arrow {
+            background : rgba(0, 0, 0, 0.8);
+            color      : $primary-color;
+            display    : inline-block;
+            height     : 60px;
+            line-height: 60px;
+            top        : 50%;
+            text-align : center;
+            width      : 40px;
+            position   : absolute;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            right: 0;
+        }
+    }
+}
+
+.about-comments {
+    padding   : 120px 2%;
+    text-align: center;
+
+    .comment-item {
+        font-family: $lora;
+        margin     : 0 auto;
+        max-width  : 800px;
+        width      : 100%;
+
+        h2 {
+            color        : $theme-title_color;
+            font-size    : $section-title_font;
+            margin-bottom: 40px;
+        }
+
+        q {
+            color        : $theme-text_color;
+            font-size    : $paragraph-font;
+            font-style   : italic;
+            line-height  : 40px;
+            margin-bottom: 40px
+        }
+
+        p {
+            @include font-styles($montserrat, $second-font, 30px);
+            color         : $second-color;
+            text-transform: uppercase;
+        }
+    }
+}

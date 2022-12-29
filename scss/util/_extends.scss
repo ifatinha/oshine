@@ -1,0 +1,60 @@
+%overlay {
+    background: rgba($color: #000000, $alpha: .5);
+    height    : 100%;
+    left      : 0;
+    opacity   : 0;
+    position  : absolute;
+    top       : 0;
+    transition: .3s ease-in-out;
+    width     : 100%;
+
+    a {
+        color      : rgba(255, 255, 255, 0.5);
+        font-family: $lora;
+        position   : absolute;
+        right      : 10px;
+        top        : 10px;
+    }
+
+    @include flex-properties(flex, center, center);
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+%primary-btn {
+    background-color: $theme-button_color-bg;
+    color           : $theme-button_color;
+    display         : inline-block;
+    font-size       : $second-font;
+    letter-spacing  : 1px;
+    line-height     : 30px;
+    margin-top      : 30px;
+    padding         : 12px 35px;
+    text-align      : center;
+    text-transform  : uppercase;
+    transition      : 0.3s all linear;
+
+    &:hover {
+        background-color: rgba(122, 122, 122, 0.15);
+        color           : $second-color;
+    }
+}
+
+%social-btn {
+    background-color: $theme-icon_color-bg;
+    border-radius   : 50%;
+    color           : $primary-color;
+    display         : inline-block;
+    font-size       : $primary-font;
+    height          : 28px;
+    line-height     : 28px;
+    transition      : .3s all ease-in-out;
+    text-align      : center;
+    width           : 28px;
+
+    &:hover {
+        background-color: $theme-icon_color-houver;
+    }
+}

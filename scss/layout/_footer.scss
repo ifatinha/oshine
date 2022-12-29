@@ -1,0 +1,30 @@
+.footer {
+    background-color: rgba(34, 34, 34, 1);
+    padding         : 60px 2%;
+}
+
+.footer-container {
+    @include flex-properties(flex, center, center);
+    flex-direction: column;
+    gap           : 20px;
+    text-align    : center;
+
+    a {
+        @include font-styles($crimsonText, $paragraph-font, 30px);
+        color     : $theme-text_color;
+        font-style: italic;
+    }
+
+    p {
+        @include font-styles($lora, $second-font, 30px);
+        color: $theme-text_color;
+    }
+
+    .footer-sociais {
+        li {
+            a {
+                @extend %social-btn;
+            }
+        }
+    }
+}

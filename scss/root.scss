@@ -7,8 +7,10 @@
 
 /* util */
 @import "util/mixins";
+@import "util/extends";
 
 /* layouts */
 @import "layout/header";
 @import "layout/home";
 @import "layout/about";
+@import "layout/footer";

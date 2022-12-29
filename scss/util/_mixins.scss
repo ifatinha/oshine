@@ -1,19 +1,27 @@
-@mixin flex-properties($displat-flex, $align-items, $justify-content) {
+@mixin flex-properties($display-flex, $align-items, $justify-content) {
     align-items    : $align-items;
-    display        : $displat-flex;
+    display        : $display-flex;
     justify-content: $justify-content;
 }
 
-@mixin background {
+@mixin background-properties {
     background-repeat  : no-repeat;
     background-position: center;
     background-size    : cover;
 }
 
-@mixin title-default($font-family, $font-size, $line-height) {
+@mixin font-styles($font-family, $font-size, $line-height) {
     font-family: $font-family;
     font-size  : $font-size;
     line-height: $line-height;
+}
+
+@mixin links-properties($color, $font-size, $letter-spacing) {
+    color         : $color;
+    display       : inline-block;
+    font-size     : $font-size;
+    letter-spacing: $letter-spacing;
+    text-transform: uppercase;
 }
 
 @mixin tablet {

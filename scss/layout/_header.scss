@@ -2,6 +2,7 @@
     @include flex-properties(flex, center, center);
     flex-direction: column;
     height        : 100%;
+    overflow      : hidden;
     position      : relative;
     width         : 100%;
 }
@@ -25,7 +26,7 @@
     }
 
     h1 {
-        @include title-default($kaushanScript, $title-font, 100px);
+        @include font-styles($kaushanScript, $title-font, 100px);
         letter-spacing: 3px;
 
         @include mobile {
@@ -35,7 +36,7 @@
     }
 
     h2 {
-        @include title-default($crimsonText, $subtitle-font, 40px);
+        @include font-styles($crimsonText, $subtitle-font, 40px);
         font-style: italic;
     }
 }
@@ -52,20 +53,12 @@
     padding: 25px 2%;
     width  : 100%;
 
-    ul {
-        display: flex;
-        gap    : 10px;
-    }
-
     .header-menu_desktop {
         a {
-            color         : $theme-link_color;
-            display       : inline-block;
-            font-size     : $primary-font;
-            letter-spacing: 1px;
-            padding       : 0 20px;
-            text-transform: uppercase;
-            transition    : .3s all ease-in-out;
+            @include links-properties($theme-link_color, $primary-font, 1px);
+            font-weight: 500;
+            padding    : 0 20px;
+            transition : .3s all ease-in-out;
 
             &:hover {
                 color: $theme-link_hover;
@@ -84,20 +77,7 @@
     .media-sociais {
         li {
             a {
-                background-color: $theme-icon_color-bg;
-                border-radius   : 50%;
-                color           : $primary-color;
-                display         : inline-block;
-                font-size       : $primary-font;
-                height          : 28px;
-                line-height     : 28px;
-                transition      : .3s all ease-in-out;
-                text-align      : center;
-                width           : 28px;
-
-                &:hover {
-                    background-color: $theme-icon_color-houver;
-                }
+                @extend %social-btn;
             }
         }
 
@@ -108,7 +88,7 @@
 }
 
 .nav-mobile {
-    @include background;
+    @include background-properties;
     background-image: url("./../images/menu-aberto.png");
     display         : none;
     height          : 38px;
@@ -128,13 +108,9 @@
             padding-left : 20px;
 
             a {
-                color         : $primary-color;
-                display       : inline-block;
-                font-size     : $primary-font;
-                line-height   : 40px;
-                letter-spacing: 1px;
-                opacity       : .5;
-                text-transform: uppercase;
+                @include links-properties($primary-color, $primary-font, 1px);
+                line-height: 40px;
+                opacity    : .5;
             }
         }
     }
