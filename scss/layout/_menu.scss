@@ -1,5 +1,5 @@
 .menu-bg {
-    background: $linear-gradient, url("./../../images/menu-bg.jpg");
+    background: $linear-gradient, url("./../images/menu-bg.jpg");
     @include background-properties;
     @include parallax-efect;
 }
