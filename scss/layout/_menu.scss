@@ -1,0 +1,68 @@
+.menu-bg {
+    background: $linear-gradient, url("./../../images/menu-bg.jpg");
+    @include background-properties;
+    @include parallax-efect;
+}
+
+.menu-container {
+    @include grid-properties;
+    margin-bottom: 30px;
+
+    .menu-img {
+        position: relative;
+
+        .menu-overlay {
+            @include flex-properties(flex, center, center);
+            background: rgba(0, 0, 0, 0.2);
+            height    : 100%;
+            left      : 0;
+            position  : absolute;
+            top       : 0;
+            width     : 100%;
+
+            h2 {
+                color: $primary-color;
+                @include font-styles($lora, $section-title_font, 60px);
+                font-style: italic;
+            }
+        }
+    }
+}
+
+.menu-lista {
+    width: 100%;
+
+    li {
+        @include flex-properties(flex, center, space-between);
+        border-bottom: 1px solid $theme-border_color;
+        padding      : 15px 10px;
+
+        .menu-ingredientes {
+            max-width       : 500px;
+
+            p {
+                @include font-styles($montserrat, $primary-font, 24px);
+                color         : $second-color;
+                display       : inline;
+                text-transform: uppercase;
+            }
+
+            span {
+                @include font-styles($crimsonText, $second-font, 24px);
+                color     : $theme-text_color;
+                font-style: italic;
+            }
+        }
+
+        .price {
+            color     : $theme-text_color;
+            font-size : $second-font;
+            font-style: italic;
+            text-align: right;
+        }
+
+        &:nth-child(3){
+            background-color: #f4efe8;
+        }
+    }
+}

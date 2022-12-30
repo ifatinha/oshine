@@ -4,6 +4,17 @@
     justify-content: $justify-content;
 }
 
+@mixin grid-properties() {
+    display              : grid;
+    grid-template-columns: 1fr 1fr;
+    gap                  : 30px;
+    place-items          : center;
+
+    @include tablet() {
+        grid-template-columns: 1fr;
+    }
+}
+
 @mixin background-properties {
     background-repeat  : no-repeat;
     background-position: center;
@@ -22,6 +33,12 @@
     font-size     : $font-size;
     letter-spacing: $letter-spacing;
     text-transform: uppercase;
+}
+
+@mixin parallax-efect() {
+    background-attachment: fixed;
+    transition           : right .4s ease;
+    width                : 100%;
 }
 
 @mixin tablet {

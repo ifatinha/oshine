@@ -1,28 +1,11 @@
 .about-bg {
-    background           : $linear-gradient, url("./../images/about-bg.jpg");
-    background-attachment: fixed;
+    background: $linear-gradient, url("./../images/about-bg.jpg");
     @include background-properties;
-    transition: right .4s ease;
-    width     : 100%;
-}
-
-.about-section {
-    border-top: 1px solid $theme-border_color;
-    padding   : 120px 2%;
-    width     : 100%;
-
-    @include tablet {
-        padding-bottom: 60px;
-        padding-top   : 60px;
-    }
+    @include parallax-efect;
 }
 
 .about-content {
-    display              : grid;
-    grid-template-columns: 1fr 1fr;
-    gap                  : 30px;
-    place-items          : center;
-
+    @include grid-properties;
     @include tablet {
         grid-template-columns: 1fr;
     }

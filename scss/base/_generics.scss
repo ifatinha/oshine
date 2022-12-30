@@ -8,3 +8,14 @@
     display: flex;
     gap    : 10px;
 }
+
+.section {
+    border-top: 1px solid $theme-border_color;
+    padding   : 120px 2%;
+    width     : 100%;
+
+    @include tablet {
+        padding-bottom: 60px;
+        padding-top   : 60px;
+    }
+}
