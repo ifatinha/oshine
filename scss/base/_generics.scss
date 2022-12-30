@@ -19,3 +19,28 @@
         padding-top   : 60px;
     }
 }
+
+.form {
+    width: 100%;
+
+    .form-item {
+        margin-bottom: 20px;
+        width        : 100%;
+
+        label {
+            color      : $theme-text_color;
+            font-size  : $second-font;
+            line-height: 30px;
+        }
+
+        input,
+        textarea {
+            @include font-styles($lora, $second-font, 20px);
+            border : 2px solid $theme-border_color;
+            color  : $theme-input_color;
+            outline: none;
+            padding: 10px;
+            width  : 100%;
+        }
+    }
+}

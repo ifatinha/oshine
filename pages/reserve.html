@@ -17,18 +17,18 @@
         href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Kaushan+Script&family=Lora:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@400;500;600&display=swap"
         rel="stylesheet">
 
-    <link rel="shortcut icon" href="images/fork-tool.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./../images/fork-tool.png" type="image/x-icon">
     <link rel="stylesheet" href="./../css/root.css">
     <title>Oshine | Reserve</title>
 </head>
 
 <body>
 
-    <header class="header menu-bg">
+    <header class="header reserve-bg">
         <div class="header-container">
-            <p>Bem-vindo ao</p>
-            <h1>Oshine</h1>
-            <h2>Um restaurante requintado localizado no centro de Paris</h2>
+            <p>Reserve sua mesa</p>
+            <h1>Reservas</h1>
+            <h2>Basta preencher o formulário abaixo para ter seu assento pronto</h2>
         </div>
 
         <div class="header-menu">
@@ -38,7 +38,7 @@
                 <nav>
                     <ul class="ul-menu header-menu_desktop">
                         <li><a href="./../index.html">Home</a></li>
-                        <li><a href="./about.html" class="ativo">Sobre</a></li>
+                        <li><a href="./about.html">Sobre</a></li>
                         <li><a href="./menu.html">Cardápio</a></li>
                         <li><a href="./reserve.html">Reservas</a></li>
                         <li><a href="./gallery.html">Galeria</a></li>
@@ -65,7 +65,89 @@
         </div>
     </header>
 
+    <div class="section">
+        <div class="container reserve-container">
+            <div class="reserve-info">
+                <h2 class="titulo-reserva">Horário</h2>
+                <div class="reserve-text">
+                    <p>Seg à Qui: 13h às 22h</p>
+                    <p>Sex a Dom: 10h às 23h</p>
+                </div>
+
+                <h2>Telefone</h2>
+                <div class="reserve-text">
+                    <a href="tel:+5583912345-6789">+55 83 912345-6789</a>
+                    <a href="tel:+5583998765-4321">+55 83 98765-4321</a>
+                </div>
+
+                <h2 class="titulo-reserva">E-mail</h2>
+                <div class="reserve-text">
+                    <a href="mailto:oshine@contato.com">oshine@contato.com</a>
+                    <a href="mailto:oshine@pedido.com">oshine@suporte.com</a>
+                </div>
+            </div>
+            <div class="reserve-form">
+                <form action="./">
+                    <div class="form">
+                        <h2 class="titulo-reserva">Reservar uma mesa</h2>
+                        <div class="form-item">
+                            <label for="data">Encontro</label>
+                            <input type="date" name="data" id="data">
+                        </div>
+                        <div class="form-item">
+                            <label for="horario">Horário</label>
+                            <input type="time" name="horario" id="horario">
+                        </div>
+                        <div class="form-item">
+                            <label for="mesas">Mesas</label>
+                            <input type="number" id="mesas" name="mesas" min="1" max="20">
+                        </div>
+                    </div>
+
+                    <div class="form">
+                        <h2 class="titulo-reserva">Detalhes de contato</h2>
+                        <div class="form-item">
+                            <label for="nome">Nome</label>
+                            <input type="text" name="nome" id="nome">
+                        </div>
+                        <div class="form-item">
+                            <label for="email">E-mail</label>
+                            <input type="email" name="email" id="email">
+                        </div>
+                        <div class="form-item">
+                            <label for="phone">Telefone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-item">
+                            <label for="mensagem">Mensagem</label>
+                            <textarea name="mensagem" id="mensagem" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+
+                    <a href="./" class="btn-form">Solicitar reserva</a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div>
+                <img src="./../images/oshin-v18-small.png" alt="Oshine Logo">
+            </div>
+            <a href="tel:+5583912345-6789">+55 83 912345-6789</a>
+            <ul class="footer-sociais ul-menu">
+                <li><a href="./" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="./" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="./" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="./" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a></li>
+            </ul>
+            <p>Copyright 2014. Todos os Direitos Reservados</p>
+        </div>
+    </footer>
+
     <script src="https://kit.fontawesome.com/09fa9cee0a.js" crossorigin="anonymous"></script>
+    <script src="./../js/script.js"></script>
 </body>
 
 </html>

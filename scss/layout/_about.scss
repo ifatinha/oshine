@@ -6,9 +6,7 @@
 
 .about-content {
     @include grid-properties;
-    @include tablet {
-        grid-template-columns: 1fr;
-    }
+    place-items          : center;
 
     .about-text {
         align-self: start;

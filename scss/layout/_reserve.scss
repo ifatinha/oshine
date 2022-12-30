@@ -1,0 +1,46 @@
+.reserve-bg {
+    background: $linear-gradient, url("./../images/reserve-bg.jpg");
+    @include background-properties;
+    @include parallax-efect;
+}
+
+.reserve-container {
+    @include grid-properties;
+    font-family: $lora;
+
+    .titulo-reserva {
+        color        : $theme-horario_color-title;
+        font-size    : $paragraph-font;
+        line-height  : 36px;
+        margin-bottom: 10px;
+    }
+}
+
+.reserve-info {
+    background-color: $theme-div_color-bg;
+    align-self      : start;
+    padding         : 30px;
+
+    .reserve-text {
+        margin-bottom: 30px;
+
+        p,
+        a {
+            color      : $theme-horario_color-text;
+            font-size  : $second-font;
+            line-height: 30px;
+        }
+
+        a {
+            display: block;
+        }
+    }
+}
+
+.reserve-form {
+    padding: 30px;
+
+    .btn-form {
+        @extend %primary-btn;
+    }
+}
