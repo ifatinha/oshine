@@ -20,24 +20,23 @@
 
     p {
         letter-spacing: 2px;
-        line-height   : 32px;
+        line-height   : 30px;
         opacity       : 0.8;
         text-transform: uppercase;
     }
 
     h1 {
-        @include font-styles($kaushanScript, $title-font, 100px);
+        @include typography-03(80);
         letter-spacing: 3px;
 
         @include mobile {
-            font-size  : 2rem;
-            line-height: 40px;
+            font-size  : 3rem;
+            line-height: 50px;
         }
     }
 
     h2 {
-        @include font-styles($crimsonText, $subtitle-font, 40px);
-        font-style: italic;
+        @include typography-04(24);
     }
 }
 
@@ -55,7 +54,8 @@
 
     .header-menu_desktop {
         a {
-            @include links-properties($theme-link_color, $primary-font, 1px);
+            @include typography-01(14);
+            @include links-styles($theme-link_color, 1px);
             font-weight: 500;
             padding    : 0 20px;
             transition : .3s all ease-in-out;
@@ -100,17 +100,17 @@
         bottom          : 80px;
         display         : none;
         left            : 0px;
-        position        : fixed;
+        position        : absolute;
         width           : 100%;
 
         li {
             border-bottom: 1px solid $theme-border_color;
-            padding-left : 20px;
+            padding-left : 10px;
 
             a {
-                @include links-properties($primary-color, $primary-font, 1px);
-                line-height: 40px;
-                opacity    : .5;
+                @include typography-01(14);
+                @include links-styles($primary-color, 1px);
+                opacity: .5;
             }
         }
     }

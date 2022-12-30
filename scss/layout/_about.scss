@@ -6,20 +6,19 @@
 
 .about-content {
     @include grid-properties;
-    place-items          : center;
+    place-items: center;
 
     .about-text {
         align-self: start;
 
         h1 {
-            @include font-styles($lora, $section-title_font, 60px);
+            @include typography-02(42);
             color        : $theme-title_color;
-            font-style   : italic;
             margin-bottom: 20px;
         }
 
         p {
-            @include font-styles($lora, $second-font, 30px);
+            @include typography-02(15);
             color: $theme-text_color;
 
             &:first-of-type {
@@ -84,7 +83,7 @@
         position             : relative;
 
         h2 {
-            @include font-styles($lora, 3rem, 60px);
+            @include typography-02(42);
             color     : $primary-color;
             font-style: italic;
             left      : 50%;
@@ -121,27 +120,23 @@
     text-align: center;
 
     .comment-item {
-        font-family: $lora;
-        margin     : 0 auto;
-        max-width  : 800px;
-        width      : 100%;
+        margin   : 0 auto;
+        max-width: 800px;
+        width    : 100%;
 
         h2 {
+            @include typography-02(42);
             color        : $theme-title_color;
-            font-size    : $section-title_font;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         q {
+            @include typography-02(18);
             color        : $theme-text_color;
-            font-size    : $paragraph-font;
-            font-style   : italic;
-            line-height  : 40px;
-            margin-bottom: 40px
         }
 
         p {
-            @include font-styles($montserrat, $second-font, 30px);
+            @include typography-01(14);
             color         : $second-color;
             text-transform: uppercase;
         }

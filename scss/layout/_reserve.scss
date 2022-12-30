@@ -6,12 +6,10 @@
 
 .reserve-container {
     @include grid-properties;
-    font-family: $lora;
 
     .titulo-reserva {
+        @include typography-02(18);
         color        : $theme-horario_color-title;
-        font-size    : $paragraph-font;
-        line-height  : 36px;
         margin-bottom: 10px;
     }
 }
@@ -26,9 +24,8 @@
 
         p,
         a {
-            color      : $theme-horario_color-text;
-            font-size  : $second-font;
-            line-height: 30px;
+            @include typography-02(15);
+            color: $theme-horario_color-text;
         }
 
         a {

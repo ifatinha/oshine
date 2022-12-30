@@ -9,14 +9,13 @@
     gap           : 20px;
     text-align    : center;
 
-    a {
-        @include font-styles($crimsonText, $paragraph-font, 30px);
-        color     : $theme-text_color;
-        font-style: italic;
+    >a {
+        @include typography-04(18);
+        color: $theme-text_color;
     }
 
     p {
-        @include font-styles($lora, $second-font, 30px);
+        @include typography-02(15);
         color: $theme-text_color;
     }
 

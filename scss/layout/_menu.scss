@@ -23,8 +23,7 @@
 
             h2 {
                 color: $primary-color;
-                @include font-styles($lora, $section-title_font, 60px);
-                font-style: italic;
+                @include typography-02(42);
             }
         }
     }
@@ -42,22 +41,21 @@
             max-width: 500px;
 
             p {
-                @include font-styles($montserrat, $primary-font, 24px);
+                @include typography-01(14);
                 color         : $second-color;
                 display       : inline;
                 text-transform: uppercase;
             }
 
             span {
-                @include font-styles($crimsonText, $second-font, 24px);
+                @include typography-04(15);
                 color     : $theme-text_color;
-                font-style: italic;
             }
         }
 
         .price {
+            @include typography-02(15);
             color     : $theme-text_color;
-            font-size : $second-font;
             font-style: italic;
             text-align: right;
         }
