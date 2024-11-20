@@ -1,0 +1,45 @@
+.container {
+    margin   : 0 auto;
+    max-width: 1200px;
+    width    : 100%;
+}
+
+.ul-menu {
+    display: flex;
+    gap    : 10px;
+}
+
+.section {
+    border-top: 1px solid $theme-border_color;
+    padding   : 120px 2%;
+    width     : 100%;
+
+    @include tablet {
+        padding-bottom: 60px;
+        padding-top   : 60px;
+    }
+}
+
+.form {
+    width: 100%;
+
+    .form-item {
+        margin-bottom: 20px;
+        width        : 100%;
+
+        label {
+            @include typography-02(15);
+            color: $theme-text_color;
+        }
+
+        input,
+        textarea {
+            @include typography-02(15);
+            border : 2px solid $theme-border_color;
+            color  : $theme-input_color;
+            outline: none;
+            padding: 10px;
+            width  : 100%;
+        }
+    }
+}
