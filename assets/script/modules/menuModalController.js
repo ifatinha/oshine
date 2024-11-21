@@ -34,9 +34,6 @@ const handleToggle = (event) => {
 
   const isOpen = btnOpenModal.classList.contains("burger__active");
   updateAriaAttributes(isOpen, btnOpenModal);
-
-  const isOpenSidebar = sidebar.classList.contains("sidebar__active");
-  updateAriaHidden(isOpenSidebar, sidebar);
 };
 
 export const initializeModalMenu = () => {
@@ -58,7 +55,6 @@ export const initializeCloseModal = () => {
 export const closeSidebar = () => {
   const { btnCloseSidebar } = getElementsDOM();
 
-  console.log(btnCloseSidebar);
   [("touchstart", "click")].forEach((eventType) => {
     btnCloseSidebar.addEventListener(eventType, handleToggle);
   });

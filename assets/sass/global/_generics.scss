@@ -11,3 +11,18 @@
         display: none;
     }
 }
+
+.brand {
+    display: inline-block;
+
+    img {
+        object-fit: cover;
+        width     : 80px;
+    }
+}
+
+
+.copyright {
+    color    : rgba(102, 102, 102, 1);
+    font-size: get-font-size(14);
+}

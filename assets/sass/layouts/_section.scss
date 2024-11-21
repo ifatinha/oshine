@@ -3,11 +3,7 @@
 @use "../base/colors"as *;
 @use "../global/responsive"as *;
 
-.home-bg {
-    @include bg-gradient(0.5, "../images/oshine_bg.jpg");
-}
-
-.main-container {
+.section__description {
     @include apply-color(primary-color);
     max-width    : 800px;
     padding-left : 2%;
@@ -24,8 +20,9 @@
 
     h1 {
         @include kaushan-script-font();
-        font-size  : get-font-size(80);
-        line-height: 7.5rem;
+        font-size    : get-font-size(80);
+        line-height  : 7.5rem;
+        margin-bottom: .4rem;
 
         @include devices(s) {
             font-size  : get-font-size(48);

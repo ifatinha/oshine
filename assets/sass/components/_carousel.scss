@@ -1,0 +1,48 @@
+@use "../base/mixins"as *;
+@use "../base/typography"as *;
+@use "../base/colors"as *;
+@use "../global/responsive"as *;
+
+.swiper {
+    height  : 100vh;
+    position: relative;
+    width   : 100%;
+}
+
+.swiper-slide {
+    position  : relative;
+    text-align: center;
+
+    &::after {
+        background-color: rgba($color: #000000, $alpha: 0.6);
+        content         : "";
+        inset           : 0;
+        height          : 100%;
+        position        : absolute;
+        width           : 100%;
+        z-index         : 1;
+    }
+
+    img {
+        display   : block;
+        height    : 100vh;
+        position  : relative;
+        object-fit: cover;
+        width     : 100%;
+    }
+}
+
+.slide__content {
+    position  : absolute;
+    left      : 50%;
+    opacity   : 1;
+    transition: opacity 0.5s ease-in-out;
+    top       : 50%;
+    transform : translate(-50%, -50%);
+    z-index   : 99999;
+}
+
+.swiper-slide-visible .slide-content {
+    background: darkcyan;
+    opacity   : 1;
+}

@@ -142,11 +142,12 @@ textarea {
   transform: rotate(-45deg);
 }
 .burger__button-visually {
+  color: #5f6263;
   font-size: 1rem;
   font-weight: 600;
 }
 .burger__button-bars {
-  background-color: #222222;
+  background-color: #5f6263;
   display: block;
   height: 2px;
   position: relative;
@@ -154,7 +155,7 @@ textarea {
   width: 22px;
 }
 .burger__button-bars::after, .burger__button-bars::before {
-  background-color: currentColor;
+  background-color: #5f6263;
   content: "";
   display: block;
   height: 100%;
@@ -195,6 +196,48 @@ textarea {
   background-color: #a58f60;
 }
 
+.swiper {
+  height: 100vh;
+  position: relative;
+  width: 100%;
+}
+
+.swiper-slide {
+  position: relative;
+  text-align: center;
+}
+.swiper-slide::after {
+  background-color: rgba(0, 0, 0, 0.6);
+  content: "";
+  inset: 0;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+.swiper-slide img {
+  display: block;
+  height: 100vh;
+  position: relative;
+  object-fit: cover;
+  width: 100%;
+}
+
+.slide__content {
+  position: absolute;
+  left: 50%;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99999;
+}
+
+.swiper-slide-visible .slide-content {
+  background: darkcyan;
+  opacity: 1;
+}
+
 .modal {
   color: #ffffff;
   background: rgba(0, 0, 0, 0.8);
@@ -227,9 +270,11 @@ textarea {
 
 .sidebar {
   background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
   height: 100%;
   overflow-y: auto;
-  padding: 40px;
+  padding: 40px 16px;
   position: fixed;
   right: 0;
   top: 0;
@@ -243,6 +288,12 @@ textarea {
     width: 280px;
   }
 }
+.sidebar .ul-menu {
+  align-items: start;
+  display: flex;
+  justify-content: start;
+  margin-bottom: 1rem;
+}
 
 .sidebar__active {
   transform: translateZ(0) !important;
@@ -252,9 +303,9 @@ textarea {
   font-family: "Montserrat", sans-serif;
   align-items: center;
   display: flex;
-  gap: 14px;
+  gap: 10px;
   justify-content: center;
-  color: #222222;
+  color: #5f6263;
   background: transparent;
   border: transparent;
   cursor: pointer;
@@ -262,9 +313,7 @@ textarea {
   font-weight: bolder;
   min-height: 50px;
   min-width: 44px;
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
+  position: relative;
   transition: 0.5s ease-in-out;
   text-transform: uppercase;
 }
@@ -278,7 +327,7 @@ textarea {
   transform: rotate(135deg);
 }
 .sidebar__close-btn::after, .sidebar__close-btn::before {
-  background: currentColor;
+  background-color: #5f6263;
   content: "";
   height: 2px;
   position: absolute;
@@ -294,6 +343,37 @@ textarea {
 }
 .sidebar__close-btn::before {
   transform: rotate(-45deg);
+}
+
+.sidebar__header {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.sidebar__nav {
+  flex-grow: 1;
+  margin: 2rem 0;
+}
+
+.sidebar__list {
+  font-family: "Montserrat", sans-serif;
+  flex-grow: 1;
+}
+.sidebar__list a {
+  color: rgb(102, 102, 102);
+  display: inline-block;
+  font-size: 1.5rem;
+  line-height: 45px;
+  margin-bottom: 0.4rem;
+  padding: 12px 0;
+  transition: 0.3s ease-in-out;
+  width: 100%;
+}
+.sidebar__list a:hover {
+  color: black;
 }
 
 .ul-menu {
@@ -319,6 +399,19 @@ textarea {
   }
 }
 
+.brand {
+  display: inline-block;
+}
+.brand img {
+  object-fit: cover;
+  width: 80px;
+}
+
+.copyright {
+  color: rgb(102, 102, 102);
+  font-size: get-font-size(14);
+}
+
 .container {
   margin: 0 auto;
   width: 100%;
@@ -335,59 +428,14 @@ textarea {
 }
 
 .header {
-  align-items: center;
-  display: flex;
-  gap: 0px;
-  justify-content: center;
-  flex-direction: column;
-  height: 100%;
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-}
-.header-container {
-  color: #ffffff;
-  text-align: center;
-  padding-left: 2%;
-  padding-right: 2%;
-  width: 100%;
-}
-.header-container p {
-  letter-spacing: 0.125rem;
-  line-height: 2rem;
-  opacity: 0.8;
-  text-transform: uppercase;
-}
-.header-container h1 {
-  font-family: "Kaushan Script", cursive;
-  font-size: 5rem;
-  line-height: 7.5rem;
-}
-@media screen and (max-width: calc(768px - 1px)) {
-  .header-container h1 {
-    font-size: 3rem;
-    line-height: 3.125rem;
-  }
-}
-@media screen and (max-width: 480px) {
-  .header-container h1 {
-    font-size: 3rem;
-    line-height: 3.125rem;
-  }
-}
-.header-container h2 {
-  font-family: "Crimson Text", serif;
-  font-size: 1.5rem;
-  font-style: italic;
-}
-
-.header-menu {
   background-color: #ffffff;
   bottom: 0;
+  overflow: hidden;
   position: absolute;
   width: 100%;
+  z-index: 9999;
 }
-.header-menu_container {
+.header__container {
   align-items: center;
   display: flex;
   gap: 0px;
@@ -431,11 +479,86 @@ textarea {
   color: #2293D7;
 }
 
+.section__description {
+  color: #ffffff;
+  max-width: 800px;
+  padding-left: 2%;
+  padding-right: 2%;
+  text-align: center;
+  width: 100%;
+}
+.section__description p {
+  letter-spacing: 0.125rem;
+  line-height: 2rem;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+.section__description h1 {
+  font-family: "Kaushan Script", cursive;
+  font-size: 5rem;
+  line-height: 7.5rem;
+  margin-bottom: 0.4rem;
+}
+@media screen and (max-width: calc(768px - 1px)) {
+  .section__description h1 {
+    font-size: 3rem;
+    line-height: 3.125rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .section__description h1 {
+    font-size: 3rem;
+    line-height: 3.125rem;
+  }
+}
+.section__description h2 {
+  font-family: "Crimson Text", serif;
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
 .home-bg {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/oshine_bg.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+.main-container {
+  color: #ffffff;
+  max-width: 800px;
+  padding-left: 2%;
+  padding-right: 2%;
+  text-align: center;
+  width: 100%;
+}
+.main-container p {
+  letter-spacing: 0.125rem;
+  line-height: 2rem;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+.main-container h1 {
+  font-family: "Kaushan Script", cursive;
+  font-size: 5rem;
+  line-height: 7.5rem;
+}
+@media screen and (max-width: calc(768px - 1px)) {
+  .main-container h1 {
+    font-size: 3rem;
+    line-height: 3.125rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .main-container h1 {
+    font-size: 3rem;
+    line-height: 3.125rem;
+  }
+}
+.main-container h2 {
+  font-family: "Crimson Text", serif;
+  font-size: 1.5rem;
+  font-style: italic;
 }
 
 /*# sourceMappingURL=main.css.map */

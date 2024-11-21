@@ -1,6 +1,7 @@
 import {
   initializeModalMenu,
   initializeCloseModal,
+  closeSidebar,
 } from "./modules/menuModalController.js";
 import { updateMenuLinks } from "./modules/updateMenuLinks.js";
 
@@ -9,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { name: "updateMenuLinks", func: updateMenuLinks },
     { name: "initializeModalMenu", func: initializeModalMenu },
     { name: "initializeCloseModal", func: initializeCloseModal },
+    { name: "closeSidebar", func: closeSidebar },
   ];
 
   functionsToCall.forEach(({ name, func }) => {
