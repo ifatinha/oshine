@@ -21,20 +21,27 @@
     }
 }
 
+.modal__active {
+    opacity   : 1;
+    transform : translateY(0);
+    visibility: visible;
+}
+
 .modal__close-btn {
     @include montserrat-font();
-    @include flex(center, center, 10px);
+    @include flex(center, center);
     @include apply-color(primary-color);
-    background: transparent;
-    border    : transparent;
-    cursor    : pointer;
-    font-size : get-font-size(18);
-    min-height: 50px;
-    min-width : 44px;
-    position  : absolute;
-    right     : 2rem;
-    top       : 2rem;
-    transition: .5s ease-in-out;
+    background    : transparent;
+    border        : transparent;
+    cursor        : pointer;
+    font-size     : get-font-size(18);
+    min-height    : 50px;
+    min-width     : 44px;
+    position      : absolute;
+    right         : 2rem;
+    top           : 2rem;
+    transition    : .5s ease-in-out;
+    text-transform: uppercase;
 
     @include hover {
         opacity: .5;
@@ -56,7 +63,7 @@
         position  : absolute;
         right     : 2px;
         transition: .6s ease-in-out;
-        width     : 22px;
+        width     : 24px;
     }
 
     &::after {

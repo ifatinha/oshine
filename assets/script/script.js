@@ -1,11 +1,14 @@
-import { openModal, closeModal } from "./modules/menuModalController.js";
+import {
+  openModal,
+  initializeCloseModal,
+} from "./modules/menuModalController.js";
 import { updateMenuLinks } from "./modules/updateMenuLinks.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const functionsToCall = [
-    { name: "openModal", func: openModal },
-    { name: "closeModal", func: closeModal },
     { name: "updateMenuLinks", func: updateMenuLinks },
+    { name: "openModal", func: openModal },
+    { name: "initializeCloseModal", func: initializeCloseModal },
   ];
 
   functionsToCall.forEach(({ name, func }) => {
