@@ -35,14 +35,16 @@
 .slide__content {
     position  : absolute;
     left      : 50%;
-    opacity   : 1;
+    opacity   : 0;
     transition: opacity 0.5s ease-in-out;
     top       : 50%;
     transform : translate(-50%, -50%);
     z-index   : 99999;
 }
 
-.swiper-slide-visible .slide-content {
-    background: darkcyan;
-    opacity   : 1;
+.swiper-slide-active {
+    .slide__content {
+        opacity   : 1;
+        transition: opacity 0.5s ease-in-out;
+    }
 }
