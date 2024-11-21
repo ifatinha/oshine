@@ -1,0 +1,84 @@
+@use "../base/mixins"as *;
+@use "../base/colors"as *;
+@use "../base/typography"as *;
+@use "../global/responsive"as *;
+
+.sidebar {
+    @include apply-bg-color(primary-color);
+    height    : 100%;
+    overflow-y: auto;
+    padding   : 40px;
+    position  : fixed;
+    right     : 0;
+    top       : 0;
+    transform : translateX(400px);
+    transition: transform .7s cubic-bezier(.645, .045, .355, 1),
+        -webkit-transform .7s cubic-bezier(.645, .045, .355, 1);
+    width  : 400px;
+    z-index: 10000;
+
+    @include devices(s) {
+        width: 280px
+    }
+
+    @include devices(sx) {
+        width: 280px
+    }
+}
+
+.sidebar__active {
+    transform: translateZ(0) !important;
+}
+
+.sidebar__close-btn {
+    @include montserrat-font();
+    @include flex(center, center, 14px);
+    @include apply-color(second-color);
+    background    : transparent;
+    border        : transparent;
+    cursor        : pointer;
+    font-size     : get-font-size(14);
+    font-weight   : bolder;
+    min-height    : 50px;
+    min-width     : 44px;
+    position      : absolute;
+    right         : 1rem;
+    top           : 1rem;
+    transition    : .5s ease-in-out;
+    text-transform: uppercase;
+
+    @include hover {
+        opacity: .5;
+
+        &::after {
+            transform: rotate(225deg);
+        }
+
+        &::before {
+            transform: rotate(135deg);
+        }
+    }
+
+    &::after,
+    &::before {
+        background: currentColor;
+        content   : "";
+        height    : 2px;
+        position  : absolute;
+        right     : 2px;
+        transition: .6s ease-in-out;
+        width     : 24px;
+    }
+
+    &::after {
+        transform: rotate(45deg);
+
+        @include hover {
+            transform: translate(-50%, -50%) rotate(225deg);
+        }
+    }
+
+    &::before {
+        transform: rotate(-45deg);
+    }
+}
