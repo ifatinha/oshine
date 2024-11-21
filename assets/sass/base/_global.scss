@@ -1,3 +1,5 @@
+@use "typography"as *;
+
 html {
     scroll-behavior: smooth;
 }
@@ -9,8 +11,8 @@ body {
 }
 
 body {
-    font-size  : 16px;
-    font-family: 'Montserrat', sans-serif;
+    @include montserrat-font();
+    font-size: get-font-size(16);
 }
 
 a {

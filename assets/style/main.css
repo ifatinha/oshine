@@ -92,8 +92,8 @@ body {
 }
 
 body {
-  font-size: 16px;
   font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
 }
 
 a {
@@ -132,15 +132,21 @@ textarea {
     display: none;
   }
 }
-.burger__button:hover {
-  opacity: 0.5;
+.burger__button:hover .burger__button-bars {
+  background: transparent !important;
+}
+.burger__button:hover .burger__button-bars::before {
+  transform: rotate(45deg);
+}
+.burger__button:hover .burger__button-bars::after {
+  transform: rotate(-45deg);
 }
 .burger__button-visually {
   font-size: 1rem;
   font-weight: 600;
 }
 .burger__button-bars {
-  background-color: #000000;
+  background-color: #222222;
   display: block;
   height: 2px;
   position: relative;
@@ -174,8 +180,22 @@ textarea {
   transform: rotate(-45deg);
 }
 
-.modal {
+.social-btn {
+  background-color: #464646;
   color: #ffffff;
+  border-radius: 50%;
+  display: inline-block;
+  height: 28px;
+  line-height: 30px;
+  transition: 0.3s all ease-in-out;
+  text-align: center;
+  width: 28px;
+}
+.social-btn:hover {
+  background-color: #a58f60;
+}
+
+.modal {
   background: black;
   height: 100%;
   inset: 0;
@@ -196,7 +216,6 @@ textarea {
   display: flex;
   gap: 4px;
   justify-content: center;
-  color: #ffffff;
   background: transparent;
   border: transparent;
   cursor: pointer;
@@ -359,7 +378,6 @@ textarea {
   }
 }
 .menu__list li {
-  font-family: "Poppins", sans-serif;
   text-align: center;
   width: 100%;
 }
@@ -373,6 +391,29 @@ textarea {
   padding: 0.5rem;
   text-transform: uppercase;
   width: 100%;
+}
+
+.ul-menu {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 768px) and (max-width: calc(1024px - 1px)) {
+  .social {
+    display: none;
+  }
+}
+@media screen and (max-width: calc(768px - 1px)) {
+  .social {
+    display: none;
+  }
+}
+@media screen and (max-width: 480px) {
+  .social {
+    display: none;
+  }
 }
 
 .container {
@@ -393,17 +434,105 @@ textarea {
 .header {
   align-items: center;
   display: flex;
-  gap: 1rem;
-  justify-content: space-between;
-  font-family: "Poppins", sans-serif;
-  background: #e7e7e7;
-  padding: 1rem 2%;
+  gap: 0px;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
   width: 100%;
 }
-.header__brand {
-  font-size: 1.5rem;
-  font-weight: bold;
+.header-container {
+  color: #ffffff;
+  text-align: center;
+  padding-left: 2%;
+  padding-right: 2%;
+  width: 100%;
+}
+.header-container p {
+  letter-spacing: 0.125rem;
+  line-height: 2rem;
+  opacity: 0.8;
   text-transform: uppercase;
+}
+.header-container h1 {
+  font-family: "Kaushan Script", cursive;
+  font-size: 5rem;
+  line-height: 7.5rem;
+}
+@media screen and (max-width: calc(768px - 1px)) {
+  .header-container h1 {
+    font-size: 3rem;
+    line-height: 3.125rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .header-container h1 {
+    font-size: 3rem;
+    line-height: 3.125rem;
+  }
+}
+.header-container h2 {
+  font-family: "Crimson Text", serif;
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
+.header-menu {
+  background-color: #ffffff;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+}
+.header-menu_container {
+  align-items: center;
+  display: flex;
+  gap: 0px;
+  justify-content: space-between;
+  padding: 1.5rem 2%;
+  width: 100%;
+}
+
+.navbar {
+  display: none;
+}
+@media screen and (min-width: 1920px) {
+  .navbar {
+    display: block;
+  }
+}
+@media screen and (min-width: 1440px) and (max-width: calc(1920px - 1px)) {
+  .navbar {
+    display: block;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: calc(1440px - 1px)) {
+  .navbar {
+    display: block;
+  }
+}
+
+.navbar-list a {
+  color: #5f6263;
+  font-size: 0.875rem;
+  font-weight: 500;
+  left: 0.063rem;
+  padding: 0 1.25rem;
+  transition: 0.5s ease-in-out;
+  text-transform: uppercase;
+}
+.navbar-list a:hover {
+  color: #2293D7;
+}
+.navbar-list a.activated {
+  color: #2293D7;
+}
+
+.home-bg {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/oshine_bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 /*# sourceMappingURL=main.css.map */

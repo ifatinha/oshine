@@ -1,0 +1,5 @@
+@use "../base/mixins"as *;
+
+.home-bg {
+    @include bg-gradient(0.5, "../images/oshine_bg.jpg");
+}

@@ -2,12 +2,30 @@
 @use "sass:map";
 @use "../util/functions"as *;
 
-@mixin font-primary() {
-   font-family: "Poppins", sans-serif;
+// 14, 15, 18, 24, 42, 80, 
+
+@mixin font-primary() {}
+
+@mixin montserrat-font() {
+   font-family: 'Montserrat', sans-serif;
 }
 
-@mixin font-secondary() {
-   font-family: Arial, Helvetica, sans-serif;
+@mixin lora-font() {
+   font-family: 'Lora', serif;
+}
+
+@mixin kaushan-script-font() {
+   font-family: 'Kaushan Script', cursive;
+}
+
+@mixin crimson-text() {
+   font-family: 'Crimson Text', serif;
+}
+
+@mixin font-style($font-size, $font-style, $line-height) {
+   font-size  : get-font-size($font-size);
+   font-style : $font-style;
+   line-height: $line-height;
 }
 
 @function get-font-size($size) {

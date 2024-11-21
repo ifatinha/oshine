@@ -17,7 +17,17 @@
     }
 
     @include hover {
-        opacity: .5;
+        .burger__button-bars {
+            background: transparent !important;
+
+            &::before {
+                transform: rotate(45deg);
+            }
+
+            &::after {
+                transform: rotate(-45deg);
+            }
+        }
     }
 
     &-visually {
@@ -35,7 +45,7 @@
     }
 
     &-bars {
-        @include apply-bg-color("pure-black");
+        @include apply-bg-color(second-color);
         display   : block;
         height    : 2px;
         position  : relative;
@@ -76,5 +86,21 @@
         &::after {
             transform: rotate(-45deg);
         }
+    }
+}
+
+.social-btn {
+    @include apply-bg-color(theme-icon_color-bg);
+    @include apply-color(primary-color);
+    border-radius: 50%;
+    display      : inline-block;
+    height       : 28px;
+    line-height  : 30px;
+    transition   : .3s all ease-in-out;
+    text-align   : center;
+    width        : 28px;
+
+    @include hover {
+        @include apply-bg-color(theme-icon_color-houver);
     }
 }

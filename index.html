@@ -32,35 +32,51 @@
         </div>
 
         <div class="header-menu">
-            <div class="container header-menu_container">
-                <img src="images/oshin-v18-small.png" alt="Oshine Logo" width="120" height="42">
+            <div class="container">
+                <div class="header-menu_container">
+                    <a href="index.html">
+                        <img src="images/oshin-v18-small.png" alt="Oshine Logo" width="120" height="42">
+                    </a>
 
-                <nav>
-                    <ul class="ul-menu header-menu_desktop">
-                        <li><a href="./index.html">Home</a></li>
-                        <li><a href="./pages/about.html">Sobre</a></li>
-                        <li><a href="./pages/menu.html">Cardápio</a></li>
-                        <li><a href="./pages/reserve.html">Reservas</a></li>
-                        <li><a href="./pages/gallery.html">Galeria</a></li>
+                    <nav class="navbar">
+                        <ul class="ul-menu navbar-list">
+                            <li><a href="./index.html">Home</a></li>
+                            <li><a href="./pages/about.html">Sobre</a></li>
+                            <li><a href="./pages/menu.html">Cardápio</a></li>
+                            <li><a href="./pages/reserve.html">Reservas</a></li>
+                            <li><a href="./pages/gallery.html">Galeria</a></li>
+                        </ul>
+                    </nav>
+
+                    <ul class="ul-menu social">
+                        <li>
+                            <a href="./" class="social-btn" aria-label="Facebook">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./" class="social-btn" aria-label="Instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./" class="social-btn" aria-label="Twitter">
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./" class="social-btn" aria-label="Pinterest">
+                                <i class="fa-brands fa-pinterest-p"></i>
+                            </a>
+                        </li>
                     </ul>
-                </nav>
 
-                <ul class="ul-menu media-sociais">
-                    <li><a href="./" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
-                    <li><a href="./" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
-                    <li><a href="./" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a></li>
-                    <li><a href="./" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a></li>
-                </ul>
-
-                <nav class="nav-mobile">
-                    <ul class="menu header-menu_mobile">
-                        <li><a href="./">Home</a></li>
-                        <li><a href="./pages/about.html">Sobre</a></li>
-                        <li><a href="./pages/menu.html">Cardápio</a></li>
-                        <li><a href="./pages/reserve.html">Reservas</a></li>
-                        <li><a href="./pages/gallery.html">Galeria</a></li>
-                    </ul>
-                </nav>
+                    <button class="burger__button" type="button" id="navbarOpenButton" aria-label="Abrir Menu"
+                        aria-expanded="false" aria-haspopup="menu" aria-controls="navbarMenu">
+                        <span class="burger__button-visually">Menu</span>
+                        <span class="burger__button-bars" id="menuBar" aria-hidden="true"></span>
+                    </button>
+                </div>
             </div>
         </div>
     </header>

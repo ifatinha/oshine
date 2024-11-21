@@ -31,7 +31,7 @@ $xs-device : 480px;
         }
     }
 
-    @else if $size==m {
+    @else if $size==s {
         @media screen and (max-width: calc(#{$t-device} - 1px)) {
             @content;
         }
@@ -69,7 +69,7 @@ $xs-device : 480px;
         @content;
     }
 
-    @include devices(m) {
+    @include devices(s) {
         @content;
     }
 

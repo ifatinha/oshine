@@ -1,18 +1,92 @@
 @use "../base/colors"as *;
 @use "../base/typography"as *;
 @use "../base/mixins"as *;
+@use "../global/responsive"as *;
+
 
 .header {
+    @include flex(center, center, 0px);
+    flex-direction: column;
+    height        : 100%;
+    overflow      : hidden;
+    position      : relative;
+    width         : 100%;
 
-    @include flex(center, space-between);
-    @include font-primary();
-    background: #e7e7e7;
-    padding   : 1rem 2%;
-    width     : 100%;
+    &-container {
+        @include apply-color(primary-color);
+        text-align   : center;
+        padding-left : 2%;
+        padding-right: 2%;
+        width        : 100%;
 
-    &__brand {
-        font-size     : get-font-size(24);
-        font-weight   : bold;
+        p {
+            letter-spacing: 0.125rem;
+            line-height   : 2rem;
+            opacity       : .8;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            @include kaushan-script-font();
+            font-size  : get-font-size(80);
+            line-height: 7.5rem;
+
+            @include devices(s) {
+                font-size  : get-font-size(48);
+                line-height: 3.125rem;
+            }
+
+            @include devices(xs) {
+                font-size  : get-font-size(48);
+                line-height: 3.125rem;
+            }
+        }
+
+        h2 {
+            @include crimson-text();
+            font-size : get-font-size(24);
+            font-style: italic;
+        }
+    }
+}
+
+.header-menu {
+    @include apply-bg-color(primary-color);
+    bottom  : 0;
+    position: absolute;
+    width   : 100%;
+
+    &_container {
+        @include flex(center, space-between, 0px);
+        padding: 1.5rem 2%;
+        width  : 100%;
+    }
+}
+
+.navbar {
+    display: none;
+
+    @include devices-large-screens() {
+        display: block;
+    }
+}
+
+.navbar-list {
+    a {
+        @include apply-color(theme-link_color);
+        font-size     : get-font-size(14);
+        font-weight   : 500;
+        left          : 0.063rem;
+        padding       : 0 1.25rem;
+        transition    : .5s ease-in-out;
         text-transform: uppercase;
+
+        @include hover() {
+            @include apply-color(theme-link_hover);
+        }
+
+        &.activated {
+            @include apply-color(theme-link_hover);
+        }
     }
 }
