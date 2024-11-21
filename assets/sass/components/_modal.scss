@@ -2,8 +2,8 @@
 @use "../base/typography"as *;
 @use "../base/mixins"as *;
 
-.modal {
-    @include apply-color("pure-white");
+.menu__modal {
+    @include apply-color(primary-color);
     background: rgba($color: #000000, $alpha: 1);
     height    : 100%;
     inset     : 0;
@@ -19,24 +19,56 @@
     &::-webkit-scrollbar {
         width: 0;
     }
+}
 
-    &__close-button {
-        @include flex(center, center, 4px);
-        @include apply-color("pure-white");
-        background: transparent;
-        border    : transparent;
-        cursor    : pointer;
-        font-size : get-font-size(14);
-        min-height: 42px;
-        position  : absolute;
-        right     : 20px;
-        top       : 20px;
-        z-index   : 9999999;
+.modal__close-btn {
+    @include montserrat-font();
+    @include flex(center, center, 10px);
+    @include apply-color(primary-color);
+    background: transparent;
+    border    : transparent;
+    cursor    : pointer;
+    font-size : get-font-size(18);
+    min-height: 50px;
+    min-width : 44px;
+    position  : absolute;
+    right     : 2rem;
+    top       : 2rem;
+    transition: .5s ease-in-out;
 
-        img {
-            height: 32px;
-            width : 32px;
+    @include hover {
+        opacity: .5;
+
+        &::after {
+            transform: rotate(225deg);
         }
+
+        &::before {
+            transform: rotate(135deg);
+        }
+    }
+
+    &::after,
+    &::before {
+        background: currentColor;
+        content   : "";
+        height    : 2px;
+        position  : absolute;
+        right     : 2px;
+        transition: .6s ease-in-out;
+        width     : 22px;
+    }
+
+    &::after {
+        transform: rotate(45deg);
+
+        @include hover {
+            transform: translate(-50%, -50%) rotate(225deg);
+        }
+    }
+
+    &::before {
+        transform: rotate(-45deg);
     }
 }
 
@@ -44,4 +76,16 @@
     opacity   : 1;
     transform : translateY(0);
     visibility: visible;
+}
+
+.modal__container {
+    height : 100%;
+    padding: 2%;
+
+    .ul-menu {
+        align-items    : self-start;
+        flex-direction : column;
+        justify-content: center;
+        height         : 100%;
+    }
 }
