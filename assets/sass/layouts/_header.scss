@@ -30,10 +30,12 @@
 .navbar-list {
     a {
         @include apply-color(theme-link_color);
-        font-size     : get-font-size(14);
+        display       : inline-block;
+        font-size     : get-font-size(12);
         font-weight   : 500;
         left          : 0.063rem;
-        padding       : 0 1.25rem;
+        letter-spacing: 2px;
+        padding       : 1rem 1.25rem;
         transition    : .5s ease-in-out;
         text-transform: uppercase;
 

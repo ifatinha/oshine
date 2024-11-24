@@ -60,7 +60,7 @@ img,
 video {
   display: block;
   height: auto;
-  max-width: 100%;
+  width: 100%;
 }
 
 iframe {
@@ -412,6 +412,10 @@ textarea {
   font-size: get-font-size(14);
 }
 
+#pages .header {
+  position: relative;
+}
+
 .container {
   margin: 0 auto;
   width: 100%;
@@ -465,10 +469,12 @@ textarea {
 
 .navbar-list a {
   color: #5f6263;
-  font-size: 0.875rem;
+  display: inline-block;
+  font-size: 0.75rem;
   font-weight: 500;
   left: 0.063rem;
-  padding: 0 1.25rem;
+  letter-spacing: 2px;
+  padding: 1rem 1.25rem;
   transition: 0.5s ease-in-out;
   text-transform: uppercase;
 }
@@ -477,6 +483,34 @@ textarea {
 }
 .navbar-list a.activated {
   color: #2293D7;
+}
+
+.section {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  height: 110vh;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.section__image {
+  height: 110vh;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+.section__image::after {
+  background: rgba(0, 0, 0, 0.6);
+  content: "Estou aqui";
+  inset: 0;
+  position: absolute;
+}
+.section__image img {
+  height: 100%;
+  object-fit: cover;
 }
 
 .section__description {

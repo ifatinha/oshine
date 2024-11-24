@@ -3,6 +3,33 @@
 @use "../base/colors"as *;
 @use "../global/responsive"as *;
 
+.section {
+    @include flex(center, center);
+    height  : 110vh;
+    overflow: hidden;
+    position: relative;
+    width   : 100%;
+}
+
+.section__image {
+    height  : 110vh;
+    position: absolute;
+    width   : 100%;
+    z-index : -1;
+
+    &::after {
+        background: rgba($color: #000000, $alpha: 0.6);
+        content   : "Estou aqui";
+        inset     : 0;
+        position  : absolute;
+    }
+
+    img {
+        height    : 100%;
+        object-fit: cover;
+    }
+}
+
 .section__description {
     @include apply-color(primary-color);
     max-width    : 800px;

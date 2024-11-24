@@ -2,29 +2,180 @@
 <html lang="en">
 
 <head>
+    <!-- Configuração básica -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Projeto desenvolvido com o objetivo de praticar os conceitos aprendidos durante o curso de CSS com SASS da Origamid">
+        content="Descubra uma experiência gastronômica única no Oshine. Ambiente sofisticado, pratos exclusivos e sabores que encantam os sentidos. Reserve já sua mesa e desfrute de momentos inesquecíveis.">
     <meta name="author" content="Fatima Ferreira">
     <meta name="robots" content="index, follow">
     <meta name="rating" content="general">
 
+    <!-- Palavras-chave (opcional, algumas vezes depreciado) -->
+    <meta name="keywords" content="CSS, SASS, Projeto Origamid, Web Design, Desenvolvimento Front-end">
+
+    <!-- Meta tags de idioma e região -->
+    <meta name="language" content="pt-BR">
+    <meta name="geo.region" content="BR">
+
+    <!-- Meta tags sociais (Open Graph para Facebook e LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Oshine - Um Projeto de CSS com SASS">
+    <meta property="og:description"
+        content="Descubra uma experiência gastronômica única no Oshine. Ambiente sofisticado, pratos exclusivos e sabores que encantam os sentidos. Reserve já sua mesa e desfrute de momentos inesquecíveis.">
+    <meta property="og:image" content="images/oshine-preview.png"> <!-- Link da imagem compartilhada -->
+    <meta property="og:url" content="https://seuprojeto.com">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Oshine">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Oshine - Um Projeto de CSS com SASS">
+    <meta name="twitter:description"
+        content="Descubra uma experiência gastronômica única no Oshine. Ambiente sofisticado, pratos exclusivos e sabores que encantam os sentidos. Reserve já sua mesa e desfrute de momentos inesquecíveis.">
+    <meta name="twitter:image" content="images/oshine-preview.png">
+    <meta name="twitter:creator" content="@seuusuario">
+
+    <!-- Favicon e ícones -->
+    <link rel="shortcut icon" href="../assets/images/fork-tool.png" type="image/x-icon">
+
+    <!-- Pré-carregamento de fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Kaushan+Script&family=Lora:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@400;500;600&display=swap"
         rel="stylesheet">
 
-    <link rel="shortcut icon" href="./../images/fork-tool.png" type="image/x-icon">
-    <link rel="stylesheet" href="./../css/root.css">
+    <!-- Arquivo CSS principal -->
+    <link rel="stylesheet" href="../assets/style/main.css">
+
+    <!-- swiper js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <title>Oshine | About</title>
 </head>
 
-<body>
+<body id="pages">
 
-    <header class="header about-bg">
+    <main>
+        <section class="section about">
+            <div class="section__image">
+                <img src="../assets/images/about-bg-01.jpg" alt="Oshine Restaurant">
+            </div>
+            <div class="section__description">
+                <p>A História por Trás dos Sabores</p>
+                <h1>Sobre Oshine</h1>
+                <h2>Somos mais que um restaurante; somos um refúgio de experiências onde a paixão pela gastronomia
+                    encontra o prazer de receber bem.</h2>
+            </div>
+        </section>
+    </main>
+
+    <!-- start header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__container">
+                <a href="index.html" class="brand">
+                    <img src="../assets/images/oshin-v18-small.png" alt="Oshine Logo" width="120" height="42">
+                </a>
+
+                <nav class="navbar">
+                    <ul class="ul-menu navbar-list">
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="pages/about.html">Sobre</a></li>
+                        <li><a href="pages/menu.html">Cardápio</a></li>
+                        <li><a href="pages/reserve.html">Reservas</a></li>
+                        <li><a href="pages/gallery.html">Galeria</a></li>
+                    </ul>
+                </nav>
+
+                <ul class="ul-menu social">
+                    <li>
+                        <a href="./" class="social-btn" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./" class="social-btn" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./" class="social-btn" aria-label="Twitter">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./" class="social-btn" aria-label="Pinterest">
+                            <i class="fa-brands fa-pinterest-p"></i>
+                        </a>
+                    </li>
+                </ul>
+
+                <button class="burger__button" type="button" id="navbarOpenButton" aria-label="Abrir Menu"
+                    aria-expanded="false" aria-haspopup="menu" aria-controls="navbarMenu">
+                    <span class="burger__button-visually">Menu</span>
+                    <span class="burger__button-bars" id="menuBar" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- start modal -->
+    <div class="modal" id="menuModal"></div>
+
+    <div class="sidebar" id="sidebar" role="menu" aria-label="Menu de navegação">
+
+        <header class="sidebar__header">
+            <a href="index.html" class="brand">
+                <img src="../assets/images/oshin-v18-small.png" alt="Oshine Logo">
+            </a>
+            <button class="sidebar__close-btn" id="btnCloseSidebar">
+                <span>Fechar</span>
+                <span class="close__button-x"></span>
+                <span class="close__button-y"></span>
+            </button>
+        </header>
+
+        <nav class="sidebar__nav">
+            <ul class="sidebar__list">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./pages/about.html">Sobre</a></li>
+                <li><a href="./pages/menu.html">Cardápio</a></li>
+                <li><a href="./pages/reserve.html">Reservas</a></li>
+                <li><a href="./pages/gallery.html">Galeria</a></li>
+            </ul>
+        </nav>
+
+        <ul class="ul-menu social">
+            <li>
+                <a href="./" class="social-btn" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+            </li>
+            <li>
+                <a href="./" class="social-btn" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </li>
+            <li>
+                <a href="./" class="social-btn" aria-label="Twitter">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+            </li>
+            <li>
+                <a href="./" class="social-btn" aria-label="Pinterest">
+                    <i class="fa-brands fa-pinterest-p"></i>
+                </a>
+            </li>
+        </ul>
+
+        <p class="copyright">Copyright 2024 @ vitivallis.</p>
+    </div>
+    <!-- end header -->
+
+    <!-- <header class="header about-bg">
         <div class="header-container">
             <p>Restaurante requintado e sofisticado</p>
             <h1>Sobre Oshine</h1>
@@ -173,7 +324,7 @@
             </ul>
             <p>Copyright 2014. Todos os Direitos Reservados</p>
         </div>
-    </footer>
+    </footer> -->
 
     <script src="https://kit.fontawesome.com/09fa9cee0a.js" crossorigin="anonymous"></script>
     <script src="../assets/script/script.js" type="module"></script>
