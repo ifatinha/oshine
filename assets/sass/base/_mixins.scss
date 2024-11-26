@@ -1,4 +1,5 @@
 @use "sass:math";
+@use "../global/responsive"as *;
 
 @mixin round($size, $circle: false) {
     height: $size;
@@ -34,4 +35,14 @@
     display        : flex;
     gap            : $gap;
     justify-content: $justify-content;
+}
+
+@mixin grid($grid-template-columns, $gap) {
+    display              : grid;
+    grid-template-columns: $grid-template-columns;
+    gap                  : $gap;
+
+    @include devices-small-screens() {
+        grid-template-columns: 1fr;
+    }
 }

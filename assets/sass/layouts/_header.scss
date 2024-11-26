@@ -6,11 +6,13 @@
 
 .header {
     @include apply-bg-color(primary-color);
-    bottom  : 0;
-    overflow: hidden;
-    position: absolute;
-    width   : 100%;
-    z-index : 9999;
+    border-bottom: 2px solid #efefef;
+    bottom       : 0;
+    height       : auto;
+    overflow     : hidden;
+    position     : absolute;
+    width        : 100%;
+    z-index      : 9999;
 
     &__container {
         @include flex(center, space-between, 0px);
@@ -47,4 +49,18 @@
             @include apply-color(theme-link_hover);
         }
     }
+}
+
+#pages {
+    .header {
+        position: relative;
+    }
+}
+
+.header-stick {
+    box-shadow: #000000 0px 5px 20px -17px;
+    // bottom    : auto;
+    // position  : fixed !important;
+    // top       : 0;
+    // transition: top .5s ease;
 }

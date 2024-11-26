@@ -54,9 +54,9 @@
         cursor  : pointer;
         position: relative;
 
-        .about-gallery_overlay {
-            @extend %overlay;
-        }
+        // .about-gallery_overlay {
+        //     @extend %overlay;
+        // }
     }
 }
 

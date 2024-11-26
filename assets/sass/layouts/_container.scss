@@ -2,14 +2,18 @@
 @use "../global/responsive"as *;
 
 .container {
-    margin    : 0 auto;
-    width     : 100%;
+    margin: 0 auto;
+    width : 100%;
 
-    @include devices(xl) {
+    @include devices(xxl) {
         max-width: 1440px;
     }
 
+    @include devices(xl) {
+        max-width : 1200px;
+    }
+
     @include devices(l) {
-        max-width: 1200px;
+        max-width: 1024px;
     }
 }

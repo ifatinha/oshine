@@ -105,3 +105,21 @@
         @include apply-bg-color(theme-icon_color-houver);
     }
 }
+
+.btn-default {
+    @include apply-bg-color(theme-button_color-bg);
+    @include apply-color(theme-button_color);
+    display       : inline-block;
+    font-size     : get-font-size(14);
+    letter-spacing: 1px;
+    margin-top    : 30px;
+    padding       : 12px 35px;
+    text-align    : center;
+    text-transform: uppercase;
+    transition    : 0.3s all linear;
+
+    &:hover {
+        @include apply-color(second-color);
+        background-color: rgba(122, 122, 122, 0.15);
+    }
+}

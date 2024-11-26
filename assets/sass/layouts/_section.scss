@@ -4,67 +4,33 @@
 @use "../global/responsive"as *;
 
 .section {
-    @include flex(center, center);
-    height  : 110vh;
-    overflow: hidden;
-    position: relative;
-    width   : 100%;
-}
+    border-top: 1px solid apply-color(theme-border_color);
+    padding   : 120px 2%;
+    width     : 100%;
 
-.section__image {
-    height  : 110vh;
-    position: absolute;
-    width   : 100%;
-    z-index : -1;
-
-    &::after {
-        background: rgba($color: #000000, $alpha: 0.6);
-        content   : "Estou aqui";
-        inset     : 0;
-        position  : absolute;
+    &__row {
+        @include grid(1fr 1fr, 2rem);
     }
 
-    img {
-        height    : 100%;
-        object-fit: cover;
-    }
-}
+    &__content {
+        align-self: start;
 
-.section__description {
-    @include apply-color(primary-color);
-    max-width    : 800px;
-    padding-left : 2%;
-    padding-right: 2%;
-    text-align   : center;
-    width        : 100%;
-
-    p {
-        letter-spacing: 0.125rem;
-        line-height   : 2rem;
-        opacity       : .8;
-        text-transform: uppercase;
-    }
-
-    h1 {
-        @include kaushan-script-font();
-        font-size    : get-font-size(80);
-        line-height  : 7.5rem;
-        margin-bottom: .4rem;
-
-        @include devices(s) {
-            font-size  : get-font-size(48);
-            line-height: 3.125rem;
+        h1 {
+            @include kaushan-script-font();
+            @include apply-color(theme-title_color);
+            font-size    : get-font-size(42);
+            margin-bottom: 20px;
         }
 
-        @include devices(xs) {
-            font-size  : get-font-size(48);
-            line-height: 3.125rem;
-        }
-    }
+        p {
+            @include lora-font();
+            @include apply-color(theme-text_color);
+            font-size  : get-font-size(14);
+            line-height: 1.6rem;
 
-    h2 {
-        @include crimson-text();
-        font-size : get-font-size(24);
-        font-style: italic;
+            &:first-of-type {
+                margin-bottom: 30px;
+            }
+        }
     }
 }

@@ -1,5 +1,6 @@
 @use "../base/mixins"as *;
 @use "../global/responsive"as *;
+@use "../base/typography"as *;
 
 .ul-menu {
     @include flex(center, space-between, 12px);
@@ -26,8 +27,28 @@
     font-size: get-font-size(14);
 }
 
-#pages {
-    .header {
-        position: relative;
+.overlay {
+    @include flex(center, center);
+    background: rgba($color: #000000, $alpha: .5);
+    height    : 100%;
+    left      : 0;
+    opacity   : 0;
+    position  : absolute;
+    top       : 0;
+    transition: .3s ease-in-out;
+    width     : 100%;
+
+
+    @include hover() {
+        opacity: 1;
+    }
+
+    a {
+        @include lora-font();
+        color    : rgba(255, 255, 255, 0.5);
+        font-size: get-font-size(15);
+        position : absolute;
+        right    : 10px;
+        top      : 10px;
     }
 }

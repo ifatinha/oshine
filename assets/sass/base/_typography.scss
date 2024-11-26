@@ -7,19 +7,19 @@
 @mixin font-primary() {}
 
 @mixin montserrat-font() {
-   font-family: 'Montserrat', sans-serif;
+   font-family: "Montserrat", sans-serif;
 }
 
 @mixin lora-font() {
-   font-family: 'Lora', serif;
+   font-family: "Lora", serif;
 }
 
 @mixin kaushan-script-font() {
-   font-family: 'Kaushan Script', cursive;
+   font-family: "Kaushan Script", cursive;
 }
 
 @mixin crimson-text() {
-   font-family: 'Crimson Text', serif;
+   font-family: "Crimson Text", serif;
 }
 
 @mixin font-style($font-size, $font-style, $line-height) {
