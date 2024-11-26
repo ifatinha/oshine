@@ -1,0 +1,9 @@
+@use "../base/mixins"as *;
+@use "../base/typography"as *;
+@use "../base/colors"as *;
+@use "../global/responsive"as *;
+
+.gallery__icon {
+    height: 50px;
+    width : 50px;
+}
