@@ -206,7 +206,7 @@ textarea {
   padding: 12px 35px;
   text-align: center;
   text-transform: uppercase;
-  transition: 0.3s all linear;
+  transition: 0.5s ease-in-out;
 }
 .btn-default:hover {
   color: #222222;
@@ -689,6 +689,34 @@ textarea {
 .about__gallery-item {
   cursor: pointer;
   position: relative;
+}
+
+.about__slide {
+  overflow: hidden;
+}
+@media screen and (min-width: 1920px) {
+  .about__slide .swiper {
+    height: 500px;
+  }
+}
+@media screen and (min-width: 1440px) and (max-width: calc(1920px - 1px)) {
+  .about__slide .swiper {
+    height: 500px;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: calc(1440px - 1px)) {
+  .about__slide .swiper {
+    height: 500px;
+  }
+}
+.about__slide-arrow {
+  background: rgba(0, 0, 0, 0.2);
+  height: 60px !important;
+  width: 40px !important;
+}
+.about__slide-arrow::after {
+  color: #ffffff;
+  font-size: 1.125rem !important;
 }
 
 /*# sourceMappingURL=main.css.map */

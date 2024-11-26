@@ -116,7 +116,7 @@
     padding       : 12px 35px;
     text-align    : center;
     text-transform: uppercase;
-    transition    : 0.3s all linear;
+    transition    : .5s ease-in-out;
 
     &:hover {
         @include apply-color(second-color);

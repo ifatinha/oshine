@@ -1,6 +1,6 @@
 import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
 
-export const initializeSwiper = new Swiper("#homeCarousel", {
+const initializeSwiperHome = new Swiper("#homeCarousel", {
   autoplay: {
     delay: 3000,
     disableOnInteraction: false,
@@ -12,4 +12,17 @@ export const initializeSwiper = new Swiper("#homeCarousel", {
   },
   speed: 2000,
   spaceBetween: 30,
+});
+
+const initializeAboutSlide = new Swiper("#swiperAboutSlide", {
+  direction: "vertical",
+  slidesPerView: 1,
+  pagination: {
+    el: "#swipeAboutSlidePagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: "#aboutSlideNext",
+    prevEl: "#aboutSlidePrev",
+  },
 });

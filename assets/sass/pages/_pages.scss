@@ -31,3 +31,25 @@
         position: relative;
     }
 }
+
+.about__slide {
+    overflow: hidden;
+
+    .swiper {
+        @include devices-large-screens() {
+            height: 500px;
+        }
+    }
+
+    &-arrow {
+        background: rgba(0, 0, 0, 0.2);
+        height    : 60px !important;
+        width     : 40px !important;
+
+        &::after {
+            @include apply-color(primary-color);
+
+            font-size: get-font-size(18) !important;
+        }
+    }
+}
