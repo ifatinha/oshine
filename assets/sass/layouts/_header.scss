@@ -5,14 +5,11 @@
 
 
 .header {
-    @include apply-bg-color(primary-color);
-    border-bottom: 2px solid #efefef;
-    bottom       : 0;
-    height       : auto;
-    overflow     : hidden;
-    position     : absolute;
-    width        : 100%;
-    z-index      : 9999;
+    background: rgba(12, 11, 9, 0.6);
+    overflow  : hidden;
+    position  : absolute;
+    width     : 100%;
+    z-index   : 9999;
 
     &__container {
         @include flex(center, space-between, 0px);
@@ -31,7 +28,7 @@
 
 .navbar-list {
     a {
-        @include apply-color(theme-link_color);
+        @include apply-color(primary-color);
         display       : inline-block;
         font-size     : get-font-size(12);
         font-weight   : 500;
@@ -49,18 +46,4 @@
             @include apply-color(theme-link_hover);
         }
     }
-}
-
-#pages {
-    .header {
-        position: relative;
-    }
-}
-
-.header-stick {
-    box-shadow: #000000 0px 5px 20px -17px;
-    // bottom    : auto;
-    // position  : fixed !important;
-    // top       : 0;
-    // transition: top .5s ease;
 }

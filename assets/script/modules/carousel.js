@@ -14,23 +14,22 @@ const initializeSwiperHome = new Swiper("#homeCarousel", {
   spaceBetween: 30,
 });
 
-const initializeAboutSlide = new Swiper("#swiperAboutSlide", {
-  // autoplay: {
-  //   delay: 5000,
-  //   disableOnInteraction: false,
-  // },
+const initializeAboutSlide = new Swiper("#aboutCarousel", {
+  centeredSlides: true,
   direction: "vertical",
-  effect: "fade",
-  fadeEffect: {
-    crossFade: true,
-  },
+  speed: 600,
   slidesPerView: 1,
-  pagination: {
-    el: "#swipeAboutSlidePagination",
-    clickable: true,
-  },
   navigation: {
     nextEl: "#aboutSlideNext",
     prevEl: "#aboutSlidePrev",
+  },
+});
+
+const initializeTestimonialCarousel = new Swiper("#testimonialCarousel", {
+  speed: 700,
+  pagination: {
+    el: "#testimonialCarouselPagination",
+    clickable: true,
+    dynamicBullets: true,
   },
 });

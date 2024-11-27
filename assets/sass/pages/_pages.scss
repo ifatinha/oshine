@@ -3,7 +3,14 @@
 @use "../base/colors"as *;
 @use "../global/responsive"as *;
 
-// about section gallery
+// home
+.home {
+    height  : 100vh;
+    overflow: hidden;
+    width   : 100%;
+}
+
+// about section 
 .about__gallery {
     width: 100%;
 
@@ -43,6 +50,63 @@
             font-size : get-font-size(42);
             font-style: italic;
             text-align: center;
+
+            @include devices-small-screens() {
+                font-size: get-font-size(24);
+            }
+        }
+    }
+}
+
+.testimonials {
+    padding-bottom: 80px;
+    padding-top   : 80px;
+
+    h2 {
+        @include lora-font();
+        @include apply-color(theme-title_color);
+        font-size    : get-font-size(26);
+        margin-bottom: 2rem;
+        text-align   : center;
+    }
+
+    &__item {
+        @include flex(center, center);
+        flex-direction: column;
+        padding       : 1rem;
+        text-align    : center;
+
+        .quote {
+            font-size    : get-font-size(120);
+            height       : 80px;
+            margin-bottom: 1rem;
+            position     : relative;
+            width        : 80px;
+
+            &::after {
+                @include apply-color(theme-text_color);
+                content: "\275E";
+                display: inline-block;
+                height : 100%;
+                width  : 100%;
+            }
+        }
+
+        span {
+            @include lora-font();
+            @include apply-color(theme-text_color);
+            display      : inline-block;
+            font-size    : get-font-size(20);
+            font-style   : italic;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            @include apply-color(second-color);
+            color         : get-font-size(15);
+            line-height   : 2rem;
+            margin-bottom : 2rem;
+            text-transform: uppercase;
         }
     }
 }

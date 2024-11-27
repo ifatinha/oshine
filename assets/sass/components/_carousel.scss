@@ -10,59 +10,56 @@
         position: relative;
         width   : 100%;
     }
-
-    .swiper-slide {
-        position  : relative;
-        text-align: center;
-
-        &::after {
-            background-color: rgba($color: #000000, $alpha: 0.6);
-            content         : "";
-            inset           : 0;
-            height          : 100%;
-            position        : absolute;
-            width           : 100%;
-            z-index         : 1;
-        }
-
-        img {
-            display   : block;
-            height    : 100vh;
-            position  : relative;
-            object-fit: cover;
-            width     : 100%;
-        }
-    }
 }
 
-.slide__content {
-    position  : absolute;
-    left      : 50%;
-    opacity   : 0;
-    transition: opacity 0.5s ease-in-out;
-    top       : 50%;
-    transform : translate(-50%, -50%);
-    z-index   : 99999;
+.carousel__slide {
+    position  : relative;
+    text-align: center;
+    transition: 0.8s ease-in-out;
+
+    &::after {
+        background-color: rgba($color: #000000, $alpha: 0.6);
+        content         : "";
+        inset           : 0;
+        height          : 100%;
+        position        : absolute;
+        width           : 100%;
+        z-index         : 1;
+    }
+
+    img {
+        display   : block;
+        height    : 100vh;
+        position  : relative;
+        object-fit: cover;
+        width     : 100%;
+    }
+
+    .slide__content {
+        position  : absolute;
+        left      : 50%;
+        opacity   : 0;
+        transition: 0.8s ease-in-out;
+        top       : 50%;
+        transform : translate(-50%, -50%);
+        z-index   : 99999;
+    }
 }
 
 .swiper-slide-active {
     .slide__content {
         opacity   : 1;
-        transition: opacity 0.5s ease-in-out;
+        transition: opacity 0.8s ease-in-out;
     }
 }
 
-#aboutSlide {
+.about__slide {
     .swiper {
         height: 100vh;
 
         @include devices-large-screens() {
-            height: 500px;
+            height: 70vh;
         }
-    }
-
-    .swiper-slide {
-        transition: 0.8s;
     }
 
     .about__slide-arrow {
@@ -75,9 +72,16 @@
             font-size: get-font-size(18) !important;
         }
     }
+}
 
-    img {
-        height    : 100%;
-        object-fit: cover;
+.testimonials {
+
+    .swiper {
+        max-width: 700px;
+        width    : 100%;
+    }
+
+    .swiper-pagination-bullet {
+        @include apply-bg-color(theme-link_color);
     }
 }

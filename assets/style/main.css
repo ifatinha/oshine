@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
 html,
 body,
@@ -218,11 +219,13 @@ textarea {
   position: relative;
   width: 100%;
 }
-#homeCarousel .swiper-slide {
+
+.carousel__slide {
   position: relative;
   text-align: center;
+  transition: 0.8s ease-in-out;
 }
-#homeCarousel .swiper-slide::after {
+.carousel__slide::after {
   background-color: rgba(0, 0, 0, 0.6);
   content: "";
   inset: 0;
@@ -231,19 +234,18 @@ textarea {
   width: 100%;
   z-index: 1;
 }
-#homeCarousel .swiper-slide img {
+.carousel__slide img {
   display: block;
   height: 100vh;
   position: relative;
   object-fit: cover;
   width: 100%;
 }
-
-.slide__content {
+.carousel__slide .slide__content {
   position: absolute;
   left: 50%;
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+  transition: 0.8s ease-in-out;
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 99999;
@@ -251,42 +253,43 @@ textarea {
 
 .swiper-slide-active .slide__content {
   opacity: 1;
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.8s ease-in-out;
 }
 
-#aboutSlide .swiper {
+.about__slide .swiper {
   height: 100vh;
 }
 @media screen and (min-width: 1920px) {
-  #aboutSlide .swiper {
-    height: 500px;
+  .about__slide .swiper {
+    height: 70vh;
   }
 }
 @media screen and (min-width: 1440px) and (max-width: calc(1920px - 1px)) {
-  #aboutSlide .swiper {
-    height: 500px;
+  .about__slide .swiper {
+    height: 70vh;
   }
 }
 @media screen and (min-width: 1024px) and (max-width: calc(1440px - 1px)) {
-  #aboutSlide .swiper {
-    height: 500px;
+  .about__slide .swiper {
+    height: 70vh;
   }
 }
-#aboutSlide .swiper-slide {
-  transition: 0.8s;
-}
-#aboutSlide .about__slide-arrow {
+.about__slide .about__slide-arrow {
   background: rgba(0, 0, 0, 0.6);
   height: 60px !important;
   width: 40px !important;
 }
-#aboutSlide .about__slide-arrow::after {
+.about__slide .about__slide-arrow::after {
   color: #ffffff;
   font-size: 1.125rem !important;
 }
-#aboutSlide img {
-  height: 100%;
-  object-fit: cover;
+
+.testimonials .swiper {
+  max-width: 700px;
+  width: 100%;
+}
+.testimonials .swiper-pagination-bullet {
+  background-color: #5f6263;
 }
 
 .modal {
@@ -520,10 +523,7 @@ textarea {
 }
 
 .header {
-  background-color: #ffffff;
-  border-bottom: 2px solid #efefef;
-  bottom: 0;
-  height: auto;
+  background: rgba(12, 11, 9, 0.6);
   overflow: hidden;
   position: absolute;
   width: 100%;
@@ -558,7 +558,7 @@ textarea {
 }
 
 .navbar-list a {
-  color: #5f6263;
+  color: #ffffff;
   display: inline-block;
   font-size: 0.75rem;
   font-weight: 500;
@@ -575,16 +575,8 @@ textarea {
   color: #2293D7;
 }
 
-#pages .header {
-  position: relative;
-}
-
-.header-stick {
-  box-shadow: #000000 0px 5px 20px -17px;
-}
-
 .main {
-  height: 110vh;
+  height: 110%;
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -696,6 +688,12 @@ textarea {
   margin-bottom: 30px;
 }
 
+.home {
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+}
+
 .about__gallery {
   width: 100%;
 }
@@ -736,6 +734,71 @@ textarea {
   font-size: 2.625rem;
   font-style: italic;
   text-align: center;
+}
+@media screen and (min-width: 768px) and (max-width: calc(1024px - 1px)) {
+  .about__slide .slide__content h2 {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: calc(768px - 1px)) {
+  .about__slide .slide__content h2 {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .about__slide .slide__content h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.testimonials {
+  padding-bottom: 80px;
+  padding-top: 80px;
+}
+.testimonials h2 {
+  font-family: "Lora", serif;
+  color: #999999;
+  font-size: 1.625rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.testimonials__item {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
+  text-align: center;
+}
+.testimonials__item .quote {
+  font-size: 7.5rem;
+  height: 80px;
+  margin-bottom: 1rem;
+  position: relative;
+  width: 80px;
+}
+.testimonials__item .quote::after {
+  color: #5f6263;
+  content: "❞";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+}
+.testimonials__item span {
+  font-family: "Lora", serif;
+  color: #5f6263;
+  display: inline-block;
+  font-size: 1.25rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+.testimonials__item p {
+  color: #222222;
+  color: 0.9375rem;
+  line-height: 2rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
 }
 
 /*# sourceMappingURL=main.css.map */
