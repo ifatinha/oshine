@@ -15,6 +15,11 @@ const initializeSwiperHome = new Swiper("#homeCarousel", {
 });
 
 const initializeAboutSlide = new Swiper("#swiperAboutSlide", {
+  // autoplay: {
+  //   delay: 5000,
+  //   disableOnInteraction: false,
+  // },
+  direction: "vertical",
   effect: "fade",
   fadeEffect: {
     crossFade: true,

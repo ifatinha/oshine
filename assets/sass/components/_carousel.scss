@@ -54,6 +54,8 @@
 
 #aboutSlide {
     .swiper {
+        height: 100vh;
+
         @include devices-large-screens() {
             height: 500px;
         }
@@ -64,18 +66,18 @@
     }
 
     .about__slide-arrow {
-        background: rgba(0, 0, 0, 0.2);
+        background: rgba(0, 0, 0, 0.6);
         height    : 60px !important;
         width     : 40px !important;
 
         &::after {
             @include apply-color(primary-color);
-
             font-size: get-font-size(18) !important;
         }
     }
 
     img {
+        height    : 100%;
         object-fit: cover;
     }
 }
