@@ -35,21 +35,14 @@
 .about__slide {
     overflow: hidden;
 
-    .swiper {
-        @include devices-large-screens() {
-            height: 500px;
-        }
-    }
+    .slide__content {
+        @include apply-color(primary-color);
 
-    &-arrow {
-        background: rgba(0, 0, 0, 0.2);
-        height    : 60px !important;
-        width     : 40px !important;
-
-        &::after {
-            @include apply-color(primary-color);
-
-            font-size: get-font-size(18) !important;
+        h2 {
+            @include lora-font();
+            font-size : get-font-size(42);
+            font-style: italic;
+            text-align: center;
         }
     }
 }

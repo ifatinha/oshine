@@ -15,7 +15,10 @@ const initializeSwiperHome = new Swiper("#homeCarousel", {
 });
 
 const initializeAboutSlide = new Swiper("#swiperAboutSlide", {
-  direction: "vertical",
+  effect: "fade",
+  fadeEffect: {
+    crossFade: true,
+  },
   slidesPerView: 1,
   pagination: {
     el: "#swipeAboutSlidePagination",

@@ -3,32 +3,35 @@
 @use "../base/colors"as *;
 @use "../global/responsive"as *;
 
-.swiper {
-    height  : 100vh;
-    position: relative;
-    width   : 100%;
-}
 
-.swiper-slide {
-    position  : relative;
-    text-align: center;
-
-    &::after {
-        background-color: rgba($color: #000000, $alpha: 0.6);
-        content         : "";
-        inset           : 0;
-        height          : 100%;
-        position        : absolute;
-        width           : 100%;
-        z-index         : 1;
+#homeCarousel {
+    .swiper {
+        height  : 100vh;
+        position: relative;
+        width   : 100%;
     }
 
-    img {
-        display   : block;
-        height    : 100vh;
+    .swiper-slide {
         position  : relative;
-        object-fit: cover;
-        width     : 100%;
+        text-align: center;
+
+        &::after {
+            background-color: rgba($color: #000000, $alpha: 0.6);
+            content         : "";
+            inset           : 0;
+            height          : 100%;
+            position        : absolute;
+            width           : 100%;
+            z-index         : 1;
+        }
+
+        img {
+            display   : block;
+            height    : 100vh;
+            position  : relative;
+            object-fit: cover;
+            width     : 100%;
+        }
     }
 }
 
@@ -46,5 +49,33 @@
     .slide__content {
         opacity   : 1;
         transition: opacity 0.5s ease-in-out;
+    }
+}
+
+#aboutSlide {
+    .swiper {
+        @include devices-large-screens() {
+            height: 500px;
+        }
+    }
+
+    .swiper-slide {
+        transition: 0.8s;
+    }
+
+    .about__slide-arrow {
+        background: rgba(0, 0, 0, 0.2);
+        height    : 60px !important;
+        width     : 40px !important;
+
+        &::after {
+            @include apply-color(primary-color);
+
+            font-size: get-font-size(18) !important;
+        }
+    }
+
+    img {
+        object-fit: cover;
     }
 }
