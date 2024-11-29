@@ -4,6 +4,7 @@ import {
   closeSidebar,
 } from "./modules/menuModalController.js";
 import { updateMenuLinks } from "./modules/updateMenuLinks.js";
+import { scrollToTop } from "./modules/scrollToTop.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const functionsToCall = [
@@ -11,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { name: "initializeModalMenu", func: initializeModalMenu },
     { name: "initializeCloseModal", func: initializeCloseModal },
     { name: "closeSidebar", func: closeSidebar },
+    { name: "scrollToTop", func: scrollToTop },
   ];
 
   functionsToCall.forEach(({ name, func }) => {

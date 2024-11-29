@@ -1,0 +1,27 @@
+@use "../base/mixins"as *;
+@use "../base/typography"as *;
+@use "../base/colors"as *;
+
+.footer {
+    background-color: rgba(34, 34, 34, 1);
+    padding         : 60px 2%;
+}
+
+.footer__container {
+    @include flex(center, center);
+    flex-direction: column;
+    gap           : 20px;
+    text-align    : center;
+
+    >a {
+        @include crimson-font();
+        @include apply-color(theme-text_color);
+        font-size: get-font-size(18);
+    }
+
+    p {
+        @include lora-font();
+        @include apply-color(theme-text_color);
+        font-size: get-font-size(14);
+    }
+}

@@ -110,3 +110,151 @@
         }
     }
 }
+
+// menu section
+.menu__container {
+    @include grid(1fr 1fr, 2rem);
+    margin-bottom: 3rem;
+}
+
+.menu__img {
+    position: relative;
+
+    .menu__content {
+        @include flex(center, center);
+        background: rgba(0, 0, 0, 0.4);
+        height    : 100%;
+        left      : 0;
+        position  : absolute;
+        top       : 0;
+        width     : 100%;
+
+        h2 {
+            @include apply-color(primary-color);
+            @include lora-font();
+            font-size: get-font-size(42);
+        }
+    }
+}
+
+.menu__list {
+    width: 100%;
+
+    li {
+        @include flex(center, space-between, 0.4rem);
+        border-bottom: 1px solid #efefef;
+        padding      : 1rem 0.625rem;
+
+        &:nth-child(3) {
+            @include apply-bg-color(theme-div_color-bg);
+        }
+    }
+
+    .menu__ingredients {
+        max-width: 500px;
+
+        p {
+            @include apply-color(second-color);
+            display       : inline;
+            font-size     : get-font-size(14);
+            text-transform: uppercase;
+        }
+
+        span {
+            @include crimson-font();
+            @include apply-color(theme-text_color);
+            font-size: get-font-size(15);
+        }
+    }
+
+    .price {
+        @include lora-font();
+        @include apply-color(theme-text_color);
+        font-size : get-font-size(15);
+        font-style: italic;
+        text-align: right;
+    }
+}
+
+// reserve section
+.reservation__container {
+    @include grid(1fr 1fr, 2rem);
+}
+
+.reservation__title {
+    @include lora-font();
+    @include apply-color(theme-horario_color-title);
+    font-size    : get-font-size(18);
+    margin-bottom: 10px;
+}
+
+.reservation__info {
+    @include apply-bg-color(theme-div_color-bg);
+    align-self: start;
+    padding   : 2rem;
+}
+
+.reservation__contact {
+    margin-bottom: 2rem;
+
+    p,
+    a {
+        @include lora-font();
+        @include apply-color(theme-horario_color-text);
+        font-size: get-font-size(15);
+    }
+
+    a {
+        display: block;
+    }
+}
+
+.reservation__form {
+    padding-left : 2rem;
+    padding-right: 2rem;
+
+    .btn-default {
+        @include apply-bg-color(theme-link_hover);
+        @include apply-color(primary-color);
+        font-size: get-font-size(12);
+        padding  : 1.125rem;
+    }
+}
+
+.form__container {
+    width: 100%;
+}
+
+.form__item {
+    margin-bottom: 20px;
+    width        : 100%;
+
+    label {
+        @include lora-font();
+        @include apply-color(theme-text_color);
+        display      : block;
+        font-size    : get-font-size(15);
+        margin-bottom: .4rem;
+    }
+
+    input,
+    textarea {
+        @include lora-font();
+        @include apply-color(theme-input_color);
+        border   : 2px solid get-color(theme-border_color);
+        font-size: get-font-size(15);
+        outline  : none;
+        padding  : 10px;
+        width    : 100%;
+    }
+}
+
+// galeria section
+.gallery {
+    @include grid(1fr 1fr, 2rem);
+
+    &__item {
+        cursor  : pointer;
+        position: relative;
+    }
+}

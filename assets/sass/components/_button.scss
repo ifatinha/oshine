@@ -31,7 +31,7 @@
     }
 
     &-visually {
-        @include apply-color(theme-text_color);
+        @include apply-color(primary-color);
         font-size  : get-font-size(16);
         font-weight: 600;
 
@@ -46,7 +46,7 @@
     }
 
     &-bars {
-        @include apply-bg-color(theme-text_color);
+        @include apply-bg-color(primary-color);
         display   : block;
         height    : 2px;
         position  : relative;
@@ -55,7 +55,7 @@
 
         &::after,
         &::before {
-            @include apply-bg-color(theme-text_color);
+            @include apply-bg-color(primary-color);
             content   : "";
             display   : block;
             height    : 100%;
@@ -122,4 +122,53 @@
         @include apply-color(second-color);
         background-color: rgba(122, 122, 122, 0.15);
     }
+}
+
+.social-btn {
+    @include apply-bg-color(theme-icon_color-bg);
+    @include apply-color(primary-color);
+    border-radius: 50%;
+    display      : inline-block;
+    height       : 28px;
+    line-height  : 30px;
+    transition   : .5s all ease-in-out;
+    text-align   : center;
+    width        : 28px;
+
+    &:hover {
+        @include apply-bg-color(theme-icon_color-houver);
+    }
+}
+
+.btn-squade {
+    @include apply-bg-color(theme-link_hover);
+    border       : none;
+    bottom       : 20px;
+    border-radius: 4px;
+    cursor       : pointer;
+    display      : inline-block;
+    font-size    : get-font-size(16);
+    height       : 40px;
+    line-height  : 40px;
+    opacity      : 0;
+    position     : fixed;
+    right        : 20px;
+    text-align   : center;
+    transition   : opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    transform    : translateY(20px);
+    width        : 40px;
+    z-index      : 9999;
+
+    i {
+        @include apply-color(primary-color);
+    }
+
+    @include hover() {
+        opacity: .8;
+    }
+}
+
+.btn-squade.visible {
+    opacity  : 1;
+    transform: translateY(0);
 }

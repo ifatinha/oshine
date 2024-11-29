@@ -2,147 +2,283 @@
 <html lang="en">
 
 <head>
+    <!-- Configuração básica -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Projeto desenvolvido com o objetivo de praticar os conceitos aprendidos durante o curso de CSS com SASS da Origamid">
+        content="Descubra uma experiência gastronômica única no Oshine. Ambiente sofisticado, pratos exclusivos e sabores que encantam os sentidos. Reserve já sua mesa e desfrute de momentos inesquecíveis.">
     <meta name="author" content="Fatima Ferreira">
     <meta name="robots" content="index, follow">
     <meta name="rating" content="general">
 
+    <!-- Palavras-chave (opcional, algumas vezes depreciado) -->
+    <meta name="keywords" content="CSS, SASS, Projeto Origamid, Web Design, Desenvolvimento Front-end">
+
+    <!-- Meta tags de idioma e região -->
+    <meta name="language" content="pt-BR">
+    <meta name="geo.region" content="BR">
+
+    <!-- Meta tags sociais (Open Graph para Facebook e LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Oshine - Um Projeto de CSS com SASS">
+    <meta property="og:description"
+        content="Descubra uma experiência gastronômica única no Oshine. Ambiente sofisticado, pratos exclusivos e sabores que encantam os sentidos. Reserve já sua mesa e desfrute de momentos inesquecíveis.">
+    <meta property="og:image" content="images/oshine-preview.png"> <!-- Link da imagem compartilhada -->
+    <meta property="og:url" content="https://seuprojeto.com">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Oshine">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Oshine - Um Projeto de CSS com SASS">
+    <meta name="twitter:description"
+        content="Descubra uma experiência gastronômica única no Oshine. Ambiente sofisticado, pratos exclusivos e sabores que encantam os sentidos. Reserve já sua mesa e desfrute de momentos inesquecíveis.">
+    <meta name="twitter:image" content="images/oshine-preview.png">
+    <meta name="twitter:creator" content="@seuusuario">
+
+    <!-- Favicon e ícones -->
+    <link rel="shortcut icon" href="../assets/images/fork-tool.png" type="image/x-icon">
+
+    <!-- Pré-carregamento de fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Kaushan+Script&family=Lora:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Kaushan+Script&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
 
-    <link rel="shortcut icon" href="./../images/fork-tool.png" type="image/x-icon">
-    <link rel="stylesheet" href="./../css/root.css">
-    <title>Oshine | Reserve</title>
+    <!-- Arquivo CSS principal -->
+    <link rel="stylesheet" href="../assets/style/main.css">
+
+    <!-- swiper js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <title>Oshine | Reserva</title>
 </head>
+
 
 <body>
 
-    <header class="header reserve-bg">
-        <div class="header-container">
-            <p>Reserve sua mesa</p>
-            <h1>Reservas</h1>
-            <h2>Basta preencher o formulário abaixo para ter seu assento pronto</h2>
-        </div>
+    <!-- start header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__container">
+                <a href="../index.html" class="brand">
+                    <img src="../assets/images/oshin-v18-small.png" alt="Oshine Logo" width="120" height="42">
+                </a>
 
-        <div class="header-menu">
-            <div class="container header-menu_container">
-                <img src="../images/oshin-v18-small.png" alt="Oshine Logo">
-
-                <nav>
-                    <ul class="ul-menu header-menu_desktop">
-                        <li><a href="./../index.html">Home</a></li>
-                        <li><a href="./about.html">Sobre</a></li>
-                        <li><a href="./menu.html">Cardápio</a></li>
-                        <li><a href="./reserve.html">Reservas</a></li>
-                        <li><a href="./gallery.html">Galeria</a></li>
+                <nav class="navbar">
+                    <ul class="ul-menu navbar-list">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">Sobre</a></li>
+                        <li><a href="menu.html">Cardápio</a></li>
+                        <li><a href="reserve.html">Reservas</a></li>
+                        <li><a href="gallery.html">Galeria</a></li>
                     </ul>
                 </nav>
 
-                <ul class="ul-menu media-sociais">
-                    <li><a href="./" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
-                    <li><a href="./" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
-                    <li><a href="./" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a></li>
-                    <li><a href="./" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a></li>
+                <ul class="ul-menu social">
+                    <li>
+                        <a href="./" class="social-btn" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./" class="social-btn" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./" class="social-btn" aria-label="Twitter">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./" class="social-btn" aria-label="Pinterest">
+                            <i class="fa-brands fa-pinterest-p"></i>
+                        </a>
+                    </li>
                 </ul>
 
-                <nav class="nav-mobile">
-                    <ul class="ul-menu header-menu_mobile">
-                        <li><a href="./index.html">Home</a></li>
-                        <li><a href="./about.html">Sobre</a></li>
-                        <li><a href="./menu.html">Cardápio</a></li>
-                        <li><a href="./reserve.html">Reservas</a></li>
-                        <li><a href="./gallery.html">Galeria</a></li>
-                    </ul>
-                </nav>
+                <button class="burger__button" type="button" id="navbarOpenButton" aria-label="Abrir Menu"
+                    aria-expanded="false" aria-haspopup="menu" aria-controls="navbarMenu">
+                    <span class="burger__button-visually">Menu</span>
+                    <span class="burger__button-bars" id="menuBar" aria-hidden="true"></span>
+                </button>
             </div>
         </div>
     </header>
 
-    <div class="section">
-        <div class="container reserve-container">
-            <div class="reserve-info">
-                <h2 class="titulo-reserva">Horário</h2>
-                <div class="reserve-text">
-                    <p>Seg à Qui: 13h às 22h</p>
-                    <p>Sex a Dom: 10h às 23h</p>
-                </div>
+    <!-- start modal -->
+    <div class="modal" id="menuModal"></div>
 
-                <h2 class="titulo-reserva">Telefone</h2>
-                <div class="reserve-text">
-                    <a href="tel:+5583912345-6789">+55 83 912345-6789</a>
-                    <a href="tel:+5583998765-4321">+55 83 98765-4321</a>
-                </div>
+    <div class="sidebar" id="sidebar" role="menu" aria-label="Menu de navegação">
 
-                <h2 class="titulo-reserva">E-mail</h2>
-                <div class="reserve-text">
-                    <a href="mailto:oshine@contato.com">oshine@contato.com</a>
-                    <a href="mailto:oshine@pedido.com">oshine@suporte.com</a>
-                </div>
+        <header class="sidebar__header">
+            <a href="index.html" class="brand">
+                <img src="../assets/images/oshin-v18-small.png" alt="Oshine Logo">
+            </a>
+            <button class="sidebar__close-btn" id="btnCloseSidebar">
+                <span>Fechar</span>
+                <span class="close__button-x"></span>
+                <span class="close__button-y"></span>
+            </button>
+        </header>
+
+        <nav class="sidebar__nav">
+            <ul class="sidebar__list">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./pages/about.html">Sobre</a></li>
+                <li><a href="./pages/menu.html">Cardápio</a></li>
+                <li><a href="./pages/reserve.html">Reservas</a></li>
+                <li><a href="./pages/gallery.html">Galeria</a></li>
+            </ul>
+        </nav>
+
+        <ul class="ul-menu social">
+            <li>
+                <a href="./" class="social-btn" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+            </li>
+            <li>
+                <a href="./" class="social-btn" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </li>
+            <li>
+                <a href="./" class="social-btn" aria-label="Twitter">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+            </li>
+            <li>
+                <a href="./" class="social-btn" aria-label="Pinterest">
+                    <i class="fa-brands fa-pinterest-p"></i>
+                </a>
+            </li>
+        </ul>
+
+        <p class="copyright">Copyright 2024 @ vitivallis.</p>
+    </div>
+    <!-- end header -->
+
+    <!-- button go to top -->
+    <button type="button" class="btn-squade" id="btnGoToTop">
+        <i class="fa-solid fa-angle-up"></i>
+    </button>
+
+    <main>
+        <section class="main">
+            <div class="main__image">
+                <img src="../assets/images/reserve-bg.jpg" alt="Oshine Restaurant">
             </div>
-            <div class="reserve-form">
-                <form action="./">
-                    <div class="form">
-                        <h2 class="titulo-reserva">Reservar uma mesa</h2>
-                        <div class="form-item">
-                            <label for="data">Encontro</label>
-                            <input type="date" name="data" id="data">
+            <div class="main__description">
+                <p>Seu momento começa aqui</p>
+                <h1>Faça Sua Reserva</h1>
+                <h2>Momentos especiais merecem um ambiente à altura. Reserve sua mesa com facilidade e garanta uma
+                    jornada gastronômica única, cercada por sabores inesquecíveis e uma atmosfera acolhedora.</h2>
+            </div>
+        </section>
+
+        <div class="section">
+            <div class="container">
+                <div class="reservation__container">
+                    <div class="reservation__info">
+                        <h2 class="reservation__title">Horário</h2>
+                        <div class="reservation__contact">
+                            <p>Seg à Qui: 13h às 22h</p>
+                            <p>Sex a Dom: 10h às 23h</p>
                         </div>
-                        <div class="form-item">
-                            <label for="horario">Horário</label>
-                            <input type="time" name="horario" id="horario">
+
+                        <h2 class="reservation__title">Telefone</h2>
+                        <div class="reservation__contact">
+                            <a href="tel:+5583912345-6789">+55 83 912345-6789</a>
+                            <a href="tel:+5583998765-4321">+55 83 98765-4321</a>
                         </div>
-                        <div class="form-item">
-                            <label for="mesas">Mesas</label>
-                            <input type="number" id="mesas" name="mesas" min="1" max="20">
+
+                        <h2 class="reservation__title">E-mail</h2>
+                        <div class="reservation__contact">
+                            <a href="mailto:oshine@contato.com">oshine@contato.com</a>
+                            <a href="mailto:oshine@pedido.com">oshine@suporte.com</a>
                         </div>
                     </div>
+                    <div class="reservation__form">
+                        <form action="./">
+                            <div class="form__container">
+                                <h2 class="reservation__title">Reservar uma mesa</h2>
+                                <div class="form__item">
+                                    <label for="data">Encontro</label>
+                                    <input type="date" name="data" id="data">
+                                </div>
+                                <div class="form__item">
+                                    <label for="horario">Horário</label>
+                                    <input type="time" name="horario" id="horario">
+                                </div>
+                                <div class="form__item">
+                                    <label for="mesas">Mesas</label>
+                                    <input type="number" id="mesas" name="mesas" min="1" max="20">
+                                </div>
+                            </div>
 
-                    <div class="form">
-                        <h2 class="titulo-reserva">Detalhes de contato</h2>
-                        <div class="form-item">
-                            <label for="nome">Nome</label>
-                            <input type="text" name="nome" id="nome">
-                        </div>
-                        <div class="form-item">
-                            <label for="email">E-mail</label>
-                            <input type="email" name="email" id="email">
-                        </div>
-                        <div class="form-item">
-                            <label for="phone">Telefone</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-                        <div class="form-item">
-                            <label for="mensagem">Mensagem</label>
-                            <textarea name="mensagem" id="mensagem" cols="30" rows="5"></textarea>
-                        </div>
+                            <div class="form__container">
+                                <h2 class="reservation__title">Detalhes de contato</h2>
+                                <div class="form__item">
+                                    <label for="nome">Nome</label>
+                                    <input type="text" name="nome" id="nome">
+                                </div>
+                                <div class="form__item">
+                                    <label for="email">E-mail</label>
+                                    <input type="email" name="email" id="email">
+                                </div>
+                                <div class="form__item">
+                                    <label for="phone">Telefone</label>
+                                    <input type="tel" id="phone" name="phone">
+                                </div>
+                                <div class="form__item">
+                                    <label for="mensagem">Mensagem</label>
+                                    <textarea name="mensagem" id="mensagem" cols="30" rows="5"></textarea>
+                                </div>
+                            </div>
+
+                            <a href="./" class="btn-default">Solicitar reserva</a>
+                        </form>
                     </div>
-
-                    <a href="./" class="btn-form">Solicitar reserva</a>
-                </form>
+                </div>
             </div>
         </div>
-    </div>
+    </main>
 
     <footer class="footer">
-        <div class="container footer-container">
-            <div>
-                <img src="./../images/oshin-v18-small.png" alt="Oshine Logo">
+        <div class="container">
+            <div class="footer__container">
+                <div>
+                    <img src="../assets/images/oshin-v18-small.png" alt="Oshine Logo">
+                </div>
+                <a href="tel:+5583912345-6789">+55 83 912345-6789</a>
+                <ul class="ul-menu footer-sociais">
+                    <li>
+                        <a href="./" aria-label="Facebook" class="social-btn">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./" aria-label="Instagram" class="social-btn">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./" aria-label="Twitter" class="social-btn">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./" aria-label="Pinterest" class="social-btn">
+                            <i class="fa-brands fa-pinterest-p"></i>
+                        </a>
+                    </li>
+                </ul>
+                <p>Copyright 2014. Todos os Direitos Reservados</p>
             </div>
-            <a href="tel:+5583912345-6789">+55 83 912345-6789</a>
-            <ul class="footer-sociais ul-menu">
-                <li><a href="./" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
-                <li><a href="./" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
-                <li><a href="./" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a></li>
-                <li><a href="./" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a></li>
-            </ul>
-            <p>Copyright 2014. Todos os Direitos Reservados</p>
         </div>
     </footer>
 
