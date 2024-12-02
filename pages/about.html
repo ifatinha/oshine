@@ -201,42 +201,70 @@
             </div>
         </section>
 
-        <section class="about__gallery">
-            <div class="about__gallery-container">
-                <div class="about__gallery-item" data-gallery="01">
-                    <img src="../assets/images/about-galeria-01.jpg" alt="Food">
-                    <div class="overlay">
-                        <img src="../assets/images/plus_icon.png" alt="Icone" class="gallery__icon" width="50"
-                            height="50">
-                        <a href="./"><i class="fa-regular fa-heart"></i> 255</a>
-                    </div>
-                </div>
-                <div class="about__gallery-item" data-gallery="02">
-                    <img src="../assets/images/about-galeria-02.jpg" alt="Food">
-                    <div class="overlay">
-                        <img src="../assets/images/plus_icon.png" alt="Icone" class="gallery__icon" width="50"
-                            height="50">
-                        <a href="./"><i class="fa-regular fa-heart"></i> 155</a>
-                    </div>
-                </div>
-                <div class="about__gallery-item" data-gallery="03">
-                    <img src="../assets/images/about-galeria-03.jpg" alt="Food">
-                    <div class="overlay">
-                        <img src="../assets/images/plus_icon.png" alt="Icone" class="gallery__icon" width="50"
-                            height="50">
-                        <a href="./"><i class="fa-regular fa-heart"></i> 125</a>
-                    </div>
-                </div>
-                <div class="about__gallery-item" data-gallery="04">
-                    <img src="../assets/images/about-galeria-04.jpg" alt="Food">
-                    <div class="overlay">
-                        <img src="../assets/images/plus_icon.png" alt="Icone" class="gallery__icon" width="50"
-                            height="50">
-                        <a href="./"><i class="fa-regular fa-heart"></i> 355</a>
-                    </div>
+        <div class="about__gallery-container">
+            <div class="about__gallery-item" data-gallery="01" role="button">
+                <img src="../assets/images/about-galeria-01.jpg" alt="Food">
+                <div class="overlay">
+                    <img src="../assets/images/plus_icon.png" alt="Icone" class="gallery__icon" width="50" height="50">
+                    <a href="./"><i class="fa-regular fa-heart"></i> 255</a>
                 </div>
             </div>
+            <div class="about__gallery-item" data-gallery="02" role="button">
+                <img src="../assets/images/about-galeria-02.jpg" alt="Food">
+                <div class="overlay">
+                    <img src="../assets/images/plus_icon.png" alt="Icone" class="gallery__icon" width="50" height="50">
+                    <a href="./"><i class="fa-regular fa-heart"></i> 155</a>
+                </div>
+            </div>
+            <div class="about__gallery-item" data-gallery="03" role="button">
+                <img src="../assets/images/about-galeria-03.jpg" alt="Food">
+                <div class="overlay">
+                    <img src="../assets/images/plus_icon.png" alt="Icone" class="gallery__icon" width="50" height="50">
+                    <a href="./"><i class="fa-regular fa-heart"></i> 125</a>
+                </div>
+            </div>
+            <div class="about__gallery-item" data-gallery="04" role="button">
+                <img src="../assets/images/about-galeria-04.jpg" alt="Food">
+                <div class="overlay">
+                    <img src="../assets/images/plus_icon.png" alt="Icone" class="gallery__icon" width="50" height="50">
+                    <a href="./"><i class="fa-regular fa-heart"></i> 355</a>
+                </div>
+            </div>
+        </div>
         </section>
+
+        <div class="modal modal__image" id="modalImage">
+            <div class="modal__header">
+                <span id="imageCounter"></span>
+
+                <ul class="image__controls">
+                    <li>
+                        <a href="#" aria-label="Aumentar Zoom">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" aria-label="Imagem em tela cheia">
+                            <i class="fa-solid fa-expand"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" aria-label="Compartilhar imagem">
+                            <i class="fa-solid fa-share"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" aria-label="Fechar janela" id="closeModalImage">
+                            <i class="fa-solid fa-xmark"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="image__container">
+                <!-- <img src="../assets/images/about-galeria-011.jpg" alt=""> -->
+            </div>
+        </div>
 
         <section class="section">
             <div class="container">

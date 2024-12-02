@@ -1,6 +1,8 @@
 @use "../base/colors"as *;
 @use "../base/typography"as *;
 @use "../base/mixins"as *;
+@use "../global/responsive"as *;
+@use "../global/animations"as *;
 
 .modal {
     @include apply-color(primary-color);
@@ -14,7 +16,7 @@
     transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
     visibility: hidden;
     width     : 100%;
-    z-index   : 1000;
+    z-index   : 99999;
 
     &::-webkit-scrollbar {
         width: 0;
@@ -27,8 +29,59 @@
     visibility: visible;
 }
 
-.modal__active {
+.modal__image {
+    transform: translateY(0);
+}
+
+.modal__image.modal__active {
     opacity   : 1;
-    transform : translateY(0);
     visibility: visible;
+}
+
+.modal__header {
+    @include flex(center, space-between);
+    padding: 1rem 1%;
+
+    span {
+        @include lora-font();
+        font-size: get-font-size(14);
+        opacity  : 0.75;
+    }
+
+    .image__controls {
+        @include flex(center, space-between, 2rem);
+
+        a {
+            display: inline-block;
+
+            i {
+                font-size: get-font-size(20);
+            }
+        }
+    }
+}
+
+.image__container {
+    @include fadeTop();
+    width: 100%;
+
+    @include devices-large-screens {
+        height: 88%;
+        margin: 0 auto;
+        width : 80%;
+    }
+
+    @include mobile-landscape-table {
+        height: auto;
+    }
+
+    @include mobile-ladscape-phone {
+        height: 80%;
+        width : 80%;
+    }
+
+    img {
+        height    : 100%;
+        object-fit: cover;
+    }
 }

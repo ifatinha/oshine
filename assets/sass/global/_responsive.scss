@@ -79,8 +79,14 @@ $xs-device : 480px;
 }
 
 // Mixin para landscape orientation em dispositivos móveis
-@mixin mobile-landscape {
+@mixin mobile-landscape-table {
     @media screen and (max-width: 1024px) and (orientation: landscape) {
+        @content;
+    }
+}
+
+@mixin mobile-ladscape-phone {
+    @media screen and (max-width: 700px) and (orientation: landscape) {
         @content;
     }
 }
