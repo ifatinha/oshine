@@ -235,7 +235,11 @@
 
         <div class="modal modal__image" id="modalImage">
             <div class="modal__header">
-                <span id="imageCounter"></span>
+                <div class="image__counter">
+                    <span id="imageCounter"></span>
+                    <span> / </span>
+                    <span id="NumberImages"></span>
+                </div>
 
                 <ul class="image__controls">
                     <li>
@@ -261,9 +265,14 @@
                 </ul>
             </div>
 
-            <div class="image__container">
-                <!-- <img src="../assets/images/about-galeria-011.jpg" alt=""> -->
-            </div>
+            <div class="image__container"></div>
+
+            <button class="btn-gallery" id="prevImage">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <button class="btn-gallery" id="nextImage">
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
         </div>
 
         <section class="section">

@@ -172,3 +172,17 @@
     opacity  : 1;
     transform: translateY(0);
 }
+
+.btn-gallery {
+    @include apply-color(primary-color);
+    background: rgba($color: #000000, $alpha: 0.3);
+    border    : none;
+    cursor    : pointer;
+    position  : absolute;
+    padding   : .6rem;
+    top       : 50%;
+
+    i {
+        font-size: get-font-size(20);
+    }
+}

@@ -42,28 +42,43 @@
     @include flex(center, space-between);
     padding: 1rem 1%;
 
-    span {
-        @include lora-font();
-        font-size: get-font-size(14);
-        opacity  : 0.75;
+    .image__counter {
+        span {
+            @include lora-font();
+            font-size: get-font-size(14);
+            opacity  : 0.75;
+        }
     }
 
     .image__controls {
         @include flex(center, space-between, 2rem);
 
         a {
-            display: inline-block;
+            display   : inline-block;
+            transition: .5s ease-in-out;
+
+            @include hover() {
+                opacity: .5;
+            }
 
             i {
-                font-size: get-font-size(20);
+                font-size : get-font-size(20);
+                transition: .5s ease-in-out;
+
+                @include hover() {
+                    transform: scale(1.1);
+                }
             }
         }
     }
 }
 
 .image__container {
-    @include fadeTop();
-    width: 100%;
+    left     : 50%;
+    position : absolute;
+    top      : 50%;
+    transform: translate(-50%, -46%);
+    width    : 100%;
 
     @include devices-large-screens {
         height: 88%;
@@ -76,12 +91,21 @@
     }
 
     @include mobile-ladscape-phone {
-        height: 80%;
-        width : 80%;
+        height   : 80%;
+        transform: translate(-50%, -40%);
+        width    : 80%;
     }
 
     img {
         height    : 100%;
         object-fit: cover;
     }
+}
+
+#prevImage {
+    left: .4rem;
+}
+
+#nextImage {
+    right: .4rem;
 }
