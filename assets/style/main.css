@@ -695,6 +695,11 @@ textarea {
   width: 50px;
 }
 
+.gallery__item {
+  cursor: pointer;
+  position: relative;
+}
+
 .header {
   background: rgba(12, 11, 9, 0.6);
   overflow: hidden;
@@ -891,10 +896,6 @@ textarea {
   .about__gallery-container {
     grid-template-columns: 1fr;
   }
-}
-.about__gallery-item {
-  cursor: pointer;
-  position: relative;
 }
 
 .about__slide {
@@ -1157,10 +1158,6 @@ textarea {
   .gallery {
     grid-template-columns: 1fr;
   }
-}
-.gallery__item {
-  cursor: pointer;
-  position: relative;
 }
 
 /*# sourceMappingURL=main.css.map */

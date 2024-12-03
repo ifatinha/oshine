@@ -32,11 +32,6 @@
             grid-template-columns: 1fr;
         }
     }
-
-    &-item {
-        cursor  : pointer;
-        position: relative;
-    }
 }
 
 .about__slide {
@@ -252,9 +247,4 @@
 // galeria section
 .gallery {
     @include grid(1fr 1fr, 2rem);
-
-    &__item {
-        cursor  : pointer;
-        position: relative;
-    }
 }

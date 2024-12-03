@@ -1,7 +1,7 @@
 export const openModalImage = () => {
   $(document).ready(function () {
-    const images = $(".about__gallery-item");
-    $("#NumberImages").text(`0${images.length}`);
+    const images = $(".gallery__item");
+    $("#NumberImages").text(`${images.length}`);
 
     const createImage = (image) => {
       const imageContainer = $(".image__container");

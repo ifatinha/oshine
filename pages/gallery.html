@@ -182,56 +182,56 @@
         <div class="section">
             <div class="container">
                 <div class="gallery">
-                    <div class="gallery__item">
+                    <div class="gallery__item" data-gallery="1">
                         <img src="../assets/images/gallery-img-01.jpg" alt="Food">
                         <div class="overlay">
                             <img src="../assets/images/plus_icon.png" alt="Icone" class="gallery__icon">
                             <a href="./"><i class="fa-regular fa-heart"></i> 255</a>
                         </div>
                     </div>
-                    <div class="gallery__item">
+                    <div class="gallery__item" data-gallery="2">
                         <img src="../assets/images/gallery-img-02.jpg" alt="Food">
                         <div class="overlay">
                             <img src="../assets/images/plus_icon.png" alt="Food" class="gallery__icon">
                             <a href="./"><i class="fa-regular fa-heart"></i> 255</a>
                         </div>
                     </div>
-                    <div class="gallery__item">
+                    <div class="gallery__item" data-gallery="3">
                         <img src="../assets/images/gallery-img-03.jpg" alt="Food">
                         <div class="overlay">
                             <img src="../assets/images/plus_icon.png" alt="Food" class="gallery__icon">
                             <a href="./"><i class="fa-regular fa-heart"></i> 255</a>
                         </div>
                     </div>
-                    <div class="gallery__item">
+                    <div class="gallery__item" data-gallery="4">
                         <img src="../assets/images/gallery-img-04.jpg" alt="Food">
                         <div class="overlay">
                             <img src="../assets/images/plus_icon.png" alt="Food" class="gallery__icon">
                             <a href="./"><i class="fa-regular fa-heart"></i> 255</a>
                         </div>
                     </div>
-                    <div class="gallery__item">
+                    <div class="gallery__item" data-gallery="5">
                         <img src="../assets/images/gallery-img-05.jpg" alt="Food">
                         <div class="overlay">
                             <img src="../assets/images/plus_icon.png" alt="Food" class="gallery__icon">
                             <a href="./"><i class="fa-regular fa-heart"></i> 255</a>
                         </div>
                     </div>
-                    <div class="gallery__item">
+                    <div class="gallery__item" data-gallery="6">
                         <img src="../assets/images/gallery-img-06.jpg" alt="Food">
                         <div class="overlay">
                             <img src="../assets/images/plus_icon.png" alt="Food" class="gallery__icon">
                             <a href="./"><i class="fa-regular fa-heart"></i> 255</a>
                         </div>
                     </div>
-                    <div class="gallery__item">
+                    <div class="gallery__item" data-gallery="7">
                         <img src="../assets/images/gallery-img-07.jpg" alt="Food">
                         <div class="overlay">
                             <img src="../assets/images/plus_icon.png" alt="Food" class="gallery__icon">
                             <a href="./"><i class="fa-regular fa-heart"></i> 255</a>
                         </div>
                     </div>
-                    <div class="gallery__item">
+                    <div class="gallery__item" data-gallery="8">
                         <img src="../assets/images/gallery-img-08.jpg" alt="Food">
                         <div class="overlay">
                             <img src="../assets/images/plus_icon.png" alt="Food" class="gallery__icon">
@@ -239,14 +239,14 @@
                         </div>
                     </div>
 
-                    <div class="gallery__item">
+                    <div class="gallery__item" data-gallery="9">
                         <img src="../assets/images/gallery-img-09.jpg" alt="Food">
                         <div class="overlay">
                             <img src="../assets/images/plus_icon.png" alt="Food" class="gallery__icon">
                             <a href="./"><i class="fa-regular fa-heart"></i> 255</a>
                         </div>
                     </div>
-                    <div class="gallery__item">
+                    <div class="gallery__item" data-gallery="10">
                         <img src="../assets/images/gallery-img-10.jpg" alt="Food">
                         <div class="overlay">
                             <img src="../assets/images/plus_icon.png" alt="Food" class="gallery__icon">
@@ -257,6 +257,49 @@
             </div>
         </div>
     </main>
+
+    <!-- modal image -->
+    <div class="modal modal__image" id="modalImage">
+        <div class="modal__header">
+            <div class="image__counter">
+                <span id="imageCounter"></span>
+                <span> / </span>
+                <span id="NumberImages"></span>
+            </div>
+
+            <ul class="image__controls">
+                <li>
+                    <a href="#" aria-label="Aumentar Zoom">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" aria-label="Imagem em tela cheia">
+                        <i class="fa-solid fa-expand"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" aria-label="Compartilhar imagem">
+                        <i class="fa-solid fa-share"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" aria-label="Fechar janela" id="closeModalImage">
+                        <i class="fa-solid fa-xmark"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="image__container"></div>
+
+        <button class="btn-gallery" id="prevImage">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <button class="btn-gallery" id="nextImage">
+            <i class="fa-solid fa-arrow-right"></i>
+        </button>
+    </div>
 
     <footer class="footer">
         <div class="container">
@@ -292,6 +335,7 @@
         </div>
     </footer>
 
+    <script src="../assets/script/util/jquery-3.7.1.min.js"></script>
     <script src="https://kit.fontawesome.com/09fa9cee0a.js" crossorigin="anonymous"></script>
     <script src="../assets/script/script.js" type="module"></script>
 </body>
