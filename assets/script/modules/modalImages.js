@@ -29,12 +29,12 @@ export const openModalImage = () => {
     };
 
     // Evento para abrir o modal ao clicar em uma imagem
-    images.on("click", function () {
+    images.on("click", function (idx) {
       $("#modalImage").addClass("modal__active");
-      currentIndex = parseInt($(this).attr("data-gallery"));
       const clonedImage = $(this).children().first().clone();
+      currentIndex = parseInt(clonedImage.attr("data-gallery")) - 1;
       createImage(clonedImage);
-      updateImageCounter(currentIndex);
+      updateImageCounter(clonedImage.attr("data-gallery"));
     });
 
     // Fechar o modal
@@ -48,7 +48,7 @@ export const openModalImage = () => {
       currentIndex = (currentIndex - 1 + images.length) % images.length;
       const clonedImage = $(images[currentIndex]).children().first().clone();
       createImage(clonedImage);
-      updateImageCounter(currentIndex + 1);
+      updateImageCounter(clonedImage.attr("data-gallery"));
     });
 
     // next image
@@ -56,7 +56,7 @@ export const openModalImage = () => {
       currentIndex = (currentIndex + 1) % images.length;
       const clonedImage = $(images[currentIndex]).children().first().clone();
       createImage(clonedImage);
-      updateImageCounter(currentIndex + 1);
+      updateImageCounter(clonedImage.attr("data-gallery"));
     });
   });
 };
